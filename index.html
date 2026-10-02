@@ -1,954 +1,2519 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Lexy Mineral Technologies | Mineral Processing & Verification</title>
-
-  <meta name="description" content="Lexy Mineral Technologies is developing shared processing, testing, verification and documentation infrastructure for legitimate small-scale miners across Nigeria.">
-
-  <meta name="theme-color" content="#07130f">
-
-  <meta property="og:title" content="Lexy Mineral Technologies">
-  <meta property="og:description" content="Infrastructure for a better mineral value chain.">
-  <meta property="og:type" content="website">
-
-  <style>
-    :root {
-      --bg: #07130f;
-      --bg2: #0b1d17;
-      --card: #10271f;
-      --card2: #0d211a;
-      --gold: #d7ad55;
-      --gold-light: #f0cf7a;
-      --text: #f3f4ef;
-      --muted: #aab7b0;
-      --border: rgba(215, 173, 85, 0.22);
-      --max: 1180px;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background:
-        radial-gradient(circle at top right, rgba(215,173,85,0.08), transparent 30%),
-        linear-gradient(180deg, var(--bg), #050d0a);
-      color: var(--text);
-      line-height: 1.7;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .container {
-      width: min(92%, var(--max));
-      margin: auto;
-    }
-
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      backdrop-filter: blur(15px);
-      background: rgba(7, 19, 15, 0.9);
-      border-bottom: 1px solid rgba(255,255,255,0.06);
-    }
-
-    .nav-inner {
-      min-height: 72px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-    }
-
-    .logo {
-      font-size: 1.1rem;
-      font-weight: 800;
-      letter-spacing: 0.5px;
-    }
-
-    .logo span {
-      color: var(--gold);
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 25px;
-      align-items: center;
-      list-style: none;
-    }
-
-    .nav-links a {
-      color: #d5ddd8;
-      font-size: 0.9rem;
-      transition: 0.25s;
-    }
-
-    .nav-links a:hover {
-      color: var(--gold-light);
-    }
-
-    .nav-button {
-      border: 1px solid var(--gold);
-      padding: 9px 16px;
-      border-radius: 999px;
-      color: var(--gold-light) !important;
-    }
-
-    .hero {
-      min-height: 680px;
-      display: flex;
-      align-items: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      width: 550px;
-      height: 550px;
-      right: -200px;
-      top: -100px;
-      border-radius: 50%;
-      background: rgba(215,173,85,0.08);
-      filter: blur(20px);
-    }
-
-    .hero-content {
-      max-width: 820px;
-      position: relative;
-      z-index: 1;
-    }
-
-    .eyebrow {
-      display: inline-block;
-      color: var(--gold-light);
-      border: 1px solid var(--border);
-      background: rgba(215,173,85,0.06);
-      padding: 7px 13px;
-      border-radius: 999px;
-      font-size: 0.78rem;
-      letter-spacing: 1.4px;
-      text-transform: uppercase;
-      margin-bottom: 24px;
-    }
-
-    .hero h1 {
-      font-size: clamp(2.7rem, 7vw, 5.8rem);
-      line-height: 0.98;
-      letter-spacing: -3px;
-      margin-bottom: 25px;
-    }
-
-    .hero h1 span {
-      color: var(--gold);
-    }
-
-    .hero p {
-      max-width: 720px;
-      color: var(--muted);
-      font-size: 1.12rem;
-      margin-bottom: 34px;
-    }
-
-    .buttons {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 13px 21px;
-      border-radius: 8px;
-      font-weight: 700;
-      transition: 0.25s;
-    }
-
-    .btn-primary {
-      background: var(--gold);
-      color: #111;
-    }
-
-    .btn-primary:hover {
-      background: var(--gold-light);
-      transform: translateY(-2px);
-    }
-
-    .btn-secondary {
-      border: 1px solid rgba(255,255,255,0.18);
-      color: white;
-    }
-
-    .btn-secondary:hover {
-      border-color: var(--gold);
-      color: var(--gold-light);
-    }
-
-    .trust-bar {
-      border-top: 1px solid rgba(255,255,255,0.06);
-      border-bottom: 1px solid rgba(255,255,255,0.06);
-      background: rgba(255,255,255,0.02);
-    }
-
-    .trust-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-    }
-
-    .trust-item {
-      padding: 25px 18px;
-      border-right: 1px solid rgba(255,255,255,0.07);
-    }
-
-    .trust-item:last-child {
-      border-right: none;
-    }
-
-    .trust-item strong {
-      display: block;
-      color: var(--gold-light);
-      font-size: 1.2rem;
-      margin-bottom: 3px;
-    }
-
-    .trust-item span {
-      color: var(--muted);
-      font-size: 0.82rem;
-    }
-
-    section {
-      padding: 100px 0;
-    }
-
-    .section-label {
-      color: var(--gold);
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      font-size: 0.75rem;
-      font-weight: 700;
-      margin-bottom: 12px;
-    }
-
-    .section-title {
-      font-size: clamp(2rem, 4vw, 3.5rem);
-      line-height: 1.08;
-      max-width: 780px;
-      margin-bottom: 20px;
-    }
-
-    .section-intro {
-      max-width: 720px;
-      color: var(--muted);
-      margin-bottom: 45px;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-
-    .card {
-      background:
-        linear-gradient(145deg, rgba(255,255,255,0.035), rgba(255,255,255,0.01));
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 16px;
-      padding: 30px;
-    }
-
-    .card:hover {
-      border-color: var(--border);
-    }
-
-    .card-number {
-      color: var(--gold);
-      font-weight: 800;
-      font-size: 0.8rem;
-      margin-bottom: 20px;
-    }
-
-    .card h3 {
-      font-size: 1.25rem;
-      margin-bottom: 12px;
-    }
-
-    .card p {
-      color: var(--muted);
-      font-size: 0.94rem;
-    }
-
-    .flow {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 10px;
-      margin-top: 45px;
-    }
-
-    .flow-item {
-      background: var(--card);
-      border: 1px solid var(--border);
-      padding: 25px 15px;
-      text-align: center;
-      border-radius: 12px;
-    }
-
-    .flow-item strong {
-      display: block;
-      color: var(--gold-light);
-      margin-bottom: 5px;
-    }
-
-    .flow-item span {
-      color: var(--muted);
-      font-size: 0.78rem;
-    }
-
-    .experience {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
-      align-items: center;
-    }
-
-    .experience-box {
-      border-left: 2px solid var(--gold);
-      padding-left: 25px;
-    }
-
-    .experience-box p {
-      color: var(--muted);
-      margin-bottom: 18px;
-    }
-
-    .experience-list {
-      list-style: none;
-    }
-
-    .experience-list li {
-      padding: 10px 0;
-      border-bottom: 1px solid rgba(255,255,255,0.06);
-      color: #d7dfda;
-    }
-
-    .experience-list li::before {
-      content: "→";
-      color: var(--gold);
-      margin-right: 10px;
-    }
-
-    .region-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 30px;
-    }
-
-    .tag {
-      border: 1px solid rgba(255,255,255,0.12);
-      padding: 10px 15px;
-      border-radius: 999px;
-      color: #d6ddd8;
-      background: rgba(255,255,255,0.025);
-      font-size: 0.85rem;
-    }
-
-    .mineral-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 12px;
-    }
-
-    .mineral {
-      padding: 17px;
-      border-radius: 10px;
-      background: var(--card2);
-      border: 1px solid rgba(255,255,255,0.06);
-      color: #dce4df;
-    }
-
-    .note {
-      color: #8f9d96;
-      font-size: 0.82rem;
-      margin-top: 25px;
-      max-width: 850px;
-    }
-
-    .pilot {
-      background:
-        linear-gradient(135deg, rgba(215,173,85,0.09), rgba(22,60,46,0.18));
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .pilot-grid {
-      display: grid;
-      grid-template-columns: 1.3fr 1fr;
-      gap: 50px;
-      align-items: center;
-    }
-
-    .pilot-list {
-      list-style: none;
-    }
-
-    .pilot-list li {
-      margin-bottom: 14px;
-      color: #d5ddd8;
-    }
-
-    .pilot-list li::before {
-      content: "✓";
-      color: var(--gold);
-      margin-right: 10px;
-      font-weight: bold;
-    }
-
-    .cta {
-      text-align: center;
-      padding: 110px 20px;
-    }
-
-    .cta h2 {
-      font-size: clamp(2.2rem, 5vw, 4rem);
-      max-width: 850px;
-      margin: auto auto 20px;
-      line-height: 1.05;
-    }
-
-    .cta p {
-      max-width: 650px;
-      margin: 0 auto 30px;
-      color: var(--muted);
-    }
-
-    footer {
-      border-top: 1px solid rgba(255,255,255,0.07);
-      padding: 35px 0;
-      color: #87958e;
-      font-size: 0.82rem;
-    }
-
-    .footer-inner {
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    .footer-brand {
-      color: #dce3df;
-      font-weight: 700;
-    }
-
-    .footer-brand span {
-      color: var(--gold);
-    }
-
-    @media (max-width: 850px) {
-      .nav-links {
-        display: none;
-      }
-
-      .trust-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .trust-item:nth-child(2) {
-        border-right: none;
-      }
-
-      .grid {
-        grid-template-columns: 1fr;
-      }
-
-      .flow {
-        grid-template-columns: 1fr;
-      }
-
-      .experience,
-      .pilot-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .mineral-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      section {
-        padding: 75px 0;
-      }
-    }
-
-    @media (max-width: 520px) {
-      .hero {
-        min-height: 600px;
-      }
-
-      .hero h1 {
-        font-size: 3rem;
-        letter-spacing: -2px;
-      }
-
-      .trust-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .trust-item {
-        border-right: none;
-        border-bottom: 1px solid rgba(255,255,255,0.07);
-      }
-
-      .mineral-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .buttons {
-        flex-direction: column;
-      }
-
-      .btn {
-        text-align: center;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0b241b">
+<meta name="description" content="Lexy Mineral Technologies — practical mineral processing, sampling, testing, aggregation and technology-enabled infrastructure for Nigeria's mineral value chain.">
+<title>Lexy Mineral Technologies | Where Mineral Quality Meets Trust</title>
+
+<style>
+:root{
+  --forest:#0b241b;
+  --forest-2:#123b2c;
+  --forest-3:#18513c;
+  --gold:#c9a45b;
+  --gold-2:#e6c77d;
+  --white:#f7f8f3;
+  --cream:#eef2ee;
+  --text:#17221d;
+  --muted:#66756e;
+  --line:#dce4df;
+  --dark:#07140f;
+  --shadow:0 20px 60px rgba(7,28,20,.12);
+  --radius:20px;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:Inter,Arial,Helvetica,sans-serif;
+  color:var(--text);
+  background:var(--white);
+  line-height:1.65;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+button,input,select,textarea{
+  font:inherit;
+}
+
+.container{
+  width:min(1180px,92%);
+  margin:auto;
+}
+
+section{
+  padding:95px 0;
+  scroll-margin-top:75px;
+}
+
+/* ================= NAVIGATION ================= */
+
+.navbar{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:rgba(11,36,27,.97);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.nav-inner{
+  min-height:74px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:25px;
+}
+
+.logo{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  color:#fff;
+}
+
+.logo-mark{
+  width:39px;
+  height:39px;
+  border:1px solid var(--gold);
+  display:grid;
+  place-items:center;
+  transform:rotate(45deg);
+}
+
+.logo-mark span{
+  transform:rotate(-45deg);
+  color:var(--gold-2);
+  font-weight:900;
+}
+
+.logo-text strong{
+  display:block;
+  font-size:.95rem;
+  letter-spacing:.07em;
+}
+
+.logo-text small{
+  color:#94a59d;
+  font-size:.58rem;
+  letter-spacing:.13em;
+  text-transform:uppercase;
+}
+
+.nav-links{
+  display:flex;
+  align-items:center;
+  gap:19px;
+  list-style:none;
+}
+
+.nav-links a{
+  color:#dce5e0;
+  font-size:.78rem;
+  font-weight:700;
+}
+
+.nav-links a:hover{
+  color:var(--gold-2);
+}
+
+.nav-cta{
+  background:var(--gold);
+  color:var(--forest)!important;
+  padding:9px 16px;
+  border-radius:999px;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+  min-height:calc(100vh - 74px);
+  display:flex;
+  align-items:center;
+  background:
+    radial-gradient(circle at 80% 20%,rgba(33,101,74,.52),transparent 31%),
+    linear-gradient(135deg,var(--forest),var(--dark));
+  color:#fff;
+  position:relative;
+  overflow:hidden;
+}
+
+.hero::before{
+  content:"";
+  position:absolute;
+  width:520px;
+  height:520px;
+  border:1px solid rgba(230,199,125,.2);
+  border-radius:50%;
+  right:-210px;
+  top:-140px;
+}
+
+.hero::after{
+  content:"";
+  position:absolute;
+  width:300px;
+  height:300px;
+  border:1px solid rgba(230,199,125,.12);
+  border-radius:50%;
+  right:120px;
+  bottom:-190px;
+}
+
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:60px;
+  align-items:center;
+  position:relative;
+  z-index:2;
+}
+
+.eyebrow{
+  color:var(--gold-2);
+  font-size:.72rem;
+  font-weight:900;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  margin-bottom:18px;
+}
+
+.hero h1{
+  font-size:clamp(3rem,7vw,6.2rem);
+  line-height:.95;
+  letter-spacing:-.06em;
+  margin-bottom:25px;
+}
+
+.hero h1 span{
+  color:var(--gold-2);
+}
+
+.hero p{
+  color:#c2cec8;
+  max-width:700px;
+  font-size:1.06rem;
+}
+
+.hero-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:32px;
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:50px;
+  padding:0 21px;
+  border-radius:999px;
+  font-weight:800;
+  border:1px solid transparent;
+  transition:.25s ease;
+  cursor:pointer;
+}
+
+.btn:hover{
+  transform:translateY(-2px);
+}
+
+.btn-primary{
+  background:var(--gold);
+  color:var(--forest);
+}
+
+.btn-primary:hover{
+  background:var(--gold-2);
+}
+
+.btn-outline{
+  border-color:rgba(255,255,255,.25);
+  color:#fff;
+}
+
+.btn-outline:hover{
+  border-color:var(--gold);
+  color:var(--gold-2);
+}
+
+.hero-note{
+  margin-top:27px;
+  padding:15px 18px;
+  border-left:3px solid var(--gold);
+  background:rgba(255,255,255,.05);
+  color:#b9c6bf;
+  font-size:.83rem;
+  max-width:710px;
+}
+
+/* HERO VISUAL */
+
+.hero-visual{
+  min-height:440px;
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.orbit{
+  width:330px;
+  height:330px;
+  border:1px solid rgba(230,199,125,.32);
+  border-radius:50%;
+  position:relative;
+}
+
+.orbit::before{
+  content:"";
+  position:absolute;
+  inset:35px;
+  border:1px solid rgba(255,255,255,.13);
+  border-radius:50%;
+}
+
+.mineral-core{
+  position:absolute;
+  width:175px;
+  height:215px;
+  left:77px;
+  top:57px;
+  background:linear-gradient(
+    145deg,
+    #69716c,
+    #323b35 48%,
+    #111914
+  );
+  clip-path:polygon(
+    22% 4%,
+    78% 0,
+    100% 31%,
+    82% 92%,
+    37% 100%,
+    0 58%
+  );
+  box-shadow:0 25px 55px rgba(0,0,0,.35);
+}
+
+.mineral-core::after{
+  content:"LEXY";
+  position:absolute;
+  left:45px;
+  top:95px;
+  color:rgba(230,199,125,.78);
+  font-size:1rem;
+  font-weight:900;
+  letter-spacing:.16em;
+  transform:rotate(-18deg);
+}
+
+.hero-stat{
+  position:absolute;
+  background:rgba(8,26,19,.9);
+  border:1px solid rgba(255,255,255,.1);
+  padding:16px 19px;
+  border-radius:15px;
+  box-shadow:var(--shadow);
+}
+
+.hero-stat strong{
+  display:block;
+  color:var(--gold-2);
+  font-size:1.1rem;
+}
+
+.hero-stat span{
+  color:#aab8b1;
+  font-size:.7rem;
+}
+
+.stat-one{
+  top:35px;
+  right:0;
+}
+
+.stat-two{
+  bottom:35px;
+  left:0;
+}
+
+/* ================= TRUST ================= */
+
+.trust{
+  background:var(--forest-2);
+  color:#fff;
+}
+
+.trust-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+}
+
+.trust-item{
+  padding:18px;
+  text-align:center;
+  border-right:1px solid rgba(255,255,255,.1);
+}
+
+.trust-item:last-child{
+  border-right:0;
+}
+
+.trust-item strong{
+  display:block;
+  color:var(--gold-2);
+  font-size:.9rem;
+}
+
+.trust-item span{
+  color:#9eafa7;
+  font-size:.7rem;
+}
+
+/* ================= GLOBAL ================= */
+
+.section-label{
+  color:var(--gold);
+  font-size:.72rem;
+  font-weight:900;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  margin-bottom:11px;
+}
+
+.section-title{
+  color:var(--forest);
+  font-size:clamp(2rem,4vw,3.25rem);
+  line-height:1.08;
+  letter-spacing:-.035em;
+  margin-bottom:18px;
+}
+
+.section-intro{
+  color:var(--muted);
+  max-width:770px;
+  font-size:1rem;
+  margin-bottom:40px;
+}
+
+/* ================= CARDS ================= */
+
+.card-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+.card{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:29px;
+  transition:.25s ease;
+}
+
+.card:hover{
+  transform:translateY(-4px);
+  box-shadow:var(--shadow);
+  border-color:var(--gold);
+}
+
+.card-number{
+  color:var(--gold);
+  font-size:.72rem;
+  font-weight:900;
+}
+
+.card h3{
+  color:var(--forest-2);
+  font-size:1.15rem;
+  margin:8px 0;
+}
+
+.card p{
+  color:var(--muted);
+  font-size:.87rem;
+}
+
+/* ================= ABOUT ================= */
+
+.about-highlight{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+  margin-top:35px;
+}
+
+.highlight{
+  background:var(--forest);
+  color:#fff;
+  padding:30px;
+  border-radius:20px;
+}
+
+.highlight h3{
+  color:var(--gold-2);
+  margin-bottom:10px;
+}
+
+.highlight p{
+  color:#bdc9c3;
+  font-size:.87rem;
+}
+
+.highlight.light{
+  background:var(--cream);
+  color:var(--text);
+}
+
+.highlight.light h3{
+  color:var(--forest);
+}
+
+.highlight.light p{
+  color:var(--muted);
+}
+
+/* ================= MODEL ================= */
+
+.model{
+  background:var(--cream);
+}
+
+.process-flow{
+  display:grid;
+  grid-template-columns:repeat(6,1fr);
+  gap:9px;
+  margin-top:35px;
+}
+
+.process-step{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:15px;
+  padding:21px 10px;
+  text-align:center;
+}
+
+.process-step span{
+  color:var(--gold);
+  font-size:.7rem;
+  font-weight:900;
+}
+
+.process-step strong{
+  display:block;
+  color:var(--forest);
+  font-size:.8rem;
+  margin-top:5px;
+}
+
+/* ================= EXPERIENCE ================= */
+
+.experience{
+  background:var(--forest);
+  color:#fff;
+}
+
+.experience .section-title{
+  color:#fff;
+}
+
+.experience .section-intro{
+  color:#b8c6bf;
+}
+
+.experience-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:60px;
+}
+
+.experience-list{
+  list-style:none;
+}
+
+.experience-list li{
+  padding:11px 0;
+  border-bottom:1px solid rgba(255,255,255,.08);
+  color:#d5dfda;
+}
+
+.experience-list li::before{
+  content:"✓";
+  color:var(--gold-2);
+  font-weight:900;
+  margin-right:10px;
+}
+
+.location-tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:9px;
+  margin-top:25px;
+}
+
+.location-tag{
+  border:1px solid rgba(255,255,255,.13);
+  color:#d4dfd9;
+  border-radius:999px;
+  padding:8px 13px;
+  font-size:.78rem;
+}
+
+/* ================= SOLUTIONS ================= */
+
+.solution-note{
+  margin-top:30px;
+  padding:20px;
+  border-left:3px solid var(--gold);
+  background:var(--cream);
+  color:var(--muted);
+  font-size:.85rem;
+}
+
+/* ================= MINERALS ================= */
+
+.minerals{
+  background:#091b14;
+  color:#fff;
+}
+
+.minerals .section-title{
+  color:#fff;
+}
+
+.minerals .section-intro{
+  color:#b6c4bd;
+}
+
+.mineral-grid{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:10px;
+}
+
+.mineral{
+  min-height:115px;
+  display:flex;
+  align-items:flex-end;
+  padding:18px;
+  border:1px solid rgba(255,255,255,.08);
+  background:rgba(255,255,255,.035);
+  border-radius:15px;
+}
+
+.mineral strong{
+  color:#dce5df;
+  font-size:.83rem;
+}
+
+.mineral small{
+  display:block;
+  color:#8fa099;
+  margin-top:4px;
+}
+
+.mineral-note{
+  color:#8e9d95;
+  font-size:.75rem;
+  max-width:900px;
+  margin-top:24px;
+}
+
+/* ================= WHO WE SERVE ================= */
+
+.serve-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:15px;
+}
+
+.serve{
+  border:1px solid var(--line);
+  border-radius:16px;
+  background:#fff;
+  padding:24px;
+}
+
+.serve h3{
+  color:var(--forest);
+  font-size:1rem;
+  margin-bottom:6px;
+}
+
+.serve p{
+  color:var(--muted);
+  font-size:.84rem;
+}
+
+/* ================= RESPONSIBLE MINING ================= */
+
+.responsible{
+  background:var(--cream);
+}
+
+.principle-grid{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:12px;
+}
+
+.principle{
+  background:#fff;
+  padding:23px 18px;
+  border-top:3px solid var(--gold);
+  border-radius:0 0 15px 15px;
+}
+
+.principle h3{
+  color:var(--forest);
+  font-size:.9rem;
+}
+
+.principle p{
+  color:var(--muted);
+  font-size:.77rem;
+  margin-top:5px;
+}
+
+/* ================= COMPLIANCE ================= */
+
+.compliance-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+}
+
+.compliance-box{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:20px;
+  padding:30px;
+}
+
+.compliance-box.dark{
+  background:var(--forest);
+  color:#fff;
+  border:0;
+}
+
+.compliance-box h3{
+  color:var(--forest);
+  margin-bottom:10px;
+}
+
+.compliance-box.dark h3{
+  color:var(--gold-2);
+}
+
+.compliance-box p{
+  color:var(--muted);
+  font-size:.86rem;
+}
+
+.compliance-box.dark p{
+  color:#bac7c1;
+}
+
+/* ================= AREAS ================= */
+
+.areas{
+  background:var(--cream);
+}
+
+.area-grid{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:10px;
+}
+
+.area{
+  min-height:120px;
+  background:var(--forest-2);
+  color:#fff;
+  border-radius:15px;
+  padding:20px;
+  display:flex;
+  align-items:flex-end;
+  font-weight:900;
+}
+
+/* ================= INVESTORS ================= */
+
+.investors{
+  background:linear-gradient(135deg,var(--forest),var(--forest-2));
+  color:#fff;
+}
+
+.investors .section-title{
+  color:#fff;
+}
+
+.investors .section-intro{
+  color:#bdcac3;
+}
+
+.opportunity-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:10px;
+}
+
+.opportunity{
+  padding:20px;
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:14px;
+}
+
+.opportunity strong{
+  display:block;
+  color:var(--gold-2);
+  margin-bottom:4px;
+}
+
+.opportunity span{
+  color:#aebcb5;
+  font-size:.8rem;
+}
+
+/* ================= ROADMAP ================= */
+
+.roadmap{
+  display:grid;
+  gap:10px;
+}
+
+.roadmap-item{
+  display:grid;
+  grid-template-columns:50px 190px 1fr;
+  align-items:center;
+  gap:18px;
+  background:#fff;
+  border:1px solid var(--line);
+  padding:18px;
+  border-radius:15px;
+}
+
+.roadmap-number{
+  width:39px;
+  height:39px;
+  border-radius:50%;
+  background:var(--gold);
+  color:var(--forest);
+  display:grid;
+  place-items:center;
+  font-weight:900;
+}
+
+.roadmap-item strong{
+  color:var(--forest);
+}
+
+.roadmap-item span{
+  color:var(--muted);
+  font-size:.83rem;
+}
+
+/* ================= DIGITAL PLATFORM ================= */
+
+.digital{
+  background:var(--cream);
+}
+
+.digital-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:15px;
+}
+
+.digital-card{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:24px;
+}
+
+.digital-card h3{
+  color:var(--forest);
+  font-size:.95rem;
+  margin-bottom:5px;
+}
+
+.digital-card p{
+  color:var(--muted);
+  font-size:.8rem;
+}
+
+/* ================= COMPANY PROFILE ================= */
+
+.profile{
+  background:var(--forest);
+  color:#fff;
+}
+
+.profile-box{
+  display:grid;
+  grid-template-columns:1fr auto;
+  align-items:center;
+  gap:35px;
+  padding:42px;
+  background:rgba(255,255,255,.035);
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:23px;
+}
+
+.profile .section-title{
+  color:#fff;
+}
+
+.profile p{
+  color:#bdcac3;
+  max-width:760px;
+}
+
+/* ================= FAQ ================= */
+
+.faq{
+  display:grid;
+  gap:9px;
+}
+
+details{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:13px;
+  padding:17px 20px;
+}
+
+summary{
+  color:var(--forest);
+  font-weight:800;
+  cursor:pointer;
+}
+
+details p{
+  color:var(--muted);
+  font-size:.85rem;
+  margin-top:10px;
+}
+
+/* ================= CONTACT ================= */
+
+.contact{
+  background:var(--cream);
+}
+
+.contact-grid{
+  display:grid;
+  grid-template-columns:.8fr 1.2fr;
+  gap:25px;
+}
+
+.contact-info{
+  background:var(--forest);
+  color:#fff;
+  padding:32px;
+  border-radius:20px;
+}
+
+.contact-info h3{
+  color:var(--gold-2);
+  margin-bottom:15px;
+}
+
+.contact-info p{
+  color:#bdcac3;
+  font-size:.87rem;
+  margin-bottom:12px;
+}
+
+.contact-info a:hover{
+  color:var(--gold-2);
+}
+
+form{
+  background:#fff;
+  padding:30px;
+  border:1px solid var(--line);
+  border-radius:20px;
+}
+
+label{
+  display:block;
+  color:var(--forest);
+  font-size:.78rem;
+  font-weight:800;
+  margin-bottom:6px;
+}
+
+input,
+select,
+textarea{
+  width:100%;
+  padding:12px 13px;
+  border:1px solid #d4ddd8;
+  border-radius:9px;
+  margin-bottom:15px;
+  outline:none;
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+  border-color:var(--gold);
+}
+
+textarea{
+  min-height:130px;
+  resize:vertical;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+  background:#07140f;
+  color:#84938b;
+  padding:30px 0;
+  font-size:.76rem;
+}
+
+.footer{
+  display:flex;
+  justify-content:space-between;
+  gap:15px;
+  flex-wrap:wrap;
+}
+
+.footer strong{
+  color:#e0e7e3;
+}
+
+.footer span{
+  color:var(--gold);
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:900px){
+
+  .nav-links{
+    display:none;
+  }
+
+  .hero-grid{
+    grid-template-columns:1fr;
+  }
+
+  .hero-visual{
+    display:none;
+  }
+
+  .card-grid,
+  .digital-grid{
+    grid-template-columns:1fr;
+  }
+
+  .experience-grid,
+  .about-highlight,
+  .compliance-grid,
+  .contact-grid{
+    grid-template-columns:1fr;
+  }
+
+  .mineral-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .principle-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .area-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .process-flow{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .roadmap-item{
+    grid-template-columns:48px 1fr;
+  }
+
+  .roadmap-item span{
+    grid-column:2;
+  }
+
+  .profile-box{
+    grid-template-columns:1fr;
+  }
+}
+
+@media(max-width:560px){
+
+  section{
+    padding:70px 0;
+  }
+
+  .logo-text small{
+    display:none;
+  }
+
+  .hero{
+    min-height:610px;
+  }
+
+  .hero h1{
+    font-size:3.1rem;
+  }
+
+  .hero-actions{
+    flex-direction:column;
+  }
+
+  .hero-actions .btn{
+    width:100%;
+  }
+
+  .trust-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .trust-item{
+    border-bottom:1px solid rgba(255,255,255,.1);
+  }
+
+  .mineral-grid,
+  .principle-grid,
+  .area-grid,
+  .serve-grid,
+  .opportunity-grid{
+    grid-template-columns:1fr;
+  }
+
+  .process-flow{
+    grid-template-columns:1fr;
+  }
+
+  .profile-box{
+    padding:28px;
+  }
+
+  .contact-info,
+  form{
+    padding:24px;
+  }
+}
+</style>
 </head>
 
 <body>
 
-  <nav>
-    <div class="container nav-inner">
+<!-- ================= NAVIGATION ================= -->
 
-      <a href="#home" class="logo">
-        LEXY <span>MINERAL TECHNOLOGIES</span>
-      </a>
+<nav class="navbar">
+  <div class="container nav-inner">
 
-      <ul class="nav-links">
-        <li><a href="#challenge">Challenge</a></li>
-        <li><a href="#solution">Solution</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#pilot">Pilot</a></li>
-        <li>
-          <a href="#contact" class="nav-button">Partner With Us</a>
-        </li>
-      </ul>
-
-    </div>
-  </nav>
-
-  <header class="hero" id="home">
-    <div class="container">
-
-      <div class="hero-content">
-
-        <div class="eyebrow">
-          Nigeria • Mining • Technology • Infrastructure
-        </div>
-
-        <h1>
-          Infrastructure for a
-          <span>better mineral</span>
-          value chain.
-        </h1>
-
-        <p>
-          Lexy Mineral Technologies is developing shared processing,
-          testing, verification and documentation infrastructure for
-          legitimate small-scale miners across Nigeria.
-        </p>
-
-        <div class="buttons">
-          <a href="#solution" class="btn btn-primary">
-            Explore the Model
-          </a>
-
-          <a
-            href="mailto:lexymineraltechnologies@gmail.com?subject=Lexy%20Mineral%20Technologies%20Partnership"
-            class="btn btn-secondary"
-          >
-            Discuss Partnership
-          </a>
-        </div>
-
-      </div>
-    </div>
-  </header>
-
-  <div class="trust-bar">
-    <div class="container trust-grid">
-
-      <div class="trust-item">
-        <strong>Nigeria</strong>
-        <span>Initial market focus</span>
+    <a href="#home" class="logo">
+      <div class="logo-mark">
+        <span>L</span>
       </div>
 
-      <div class="trust-item">
-        <strong>~3 Years</strong>
-        <span>Practical field experience</span>
+      <div class="logo-text">
+        <strong>LEXY MINERAL TECHNOLOGIES</strong>
+        <small>Where Mineral Quality Meets Trust</small>
       </div>
+    </a>
 
-      <div class="trust-item">
-        <strong>5+ Regions</strong>
-        <span>Geographic exposure</span>
-      </div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#solutions">Solutions</a></li>
+      <li><a href="#minerals">Minerals</a></li>
+      <li><a href="#responsible">Responsible Mining</a></li>
+      <li><a href="#investors">Investors</a></li>
+      <li><a href="#contact" class="nav-cta">Contact</a></li>
+    </ul>
 
-      <div class="trust-item">
-        <strong>Pilot Stage</strong>
-        <span>Currently developing</span>
-      </div>
-
-    </div>
   </div>
+</nav>
 
-  <section id="challenge">
-    <div class="container">
 
-      <div class="section-label">The Challenge</div>
+<!-- ================= HERO ================= -->
 
-      <h2 class="section-title">
-        Valuable minerals need better infrastructure between extraction and market.
-      </h2>
+<header class="hero" id="home">
 
-      <p class="section-intro">
-        Many small-scale miners operate with limited access to reliable
-        processing, testing, documentation and market connections.
-        This can make it harder to understand material quality, reduce
-        processing efficiency and build buyer confidence.
-      </p>
+  <div class="container hero-grid">
 
-      <div class="grid">
+    <div>
 
-        <div class="card">
-          <div class="card-number">01</div>
-          <h3>Limited Processing Access</h3>
-          <p>
-            Small operators may lack affordable access to appropriate
-            processing infrastructure close to their operations.
-          </p>
-        </div>
-
-        <div class="card">
-          <div class="card-number">02</div>
-          <h3>Verification Challenges</h3>
-          <p>
-            Reliable testing and documentation can be difficult to access,
-            particularly for smaller operators.
-          </p>
-        </div>
-
-        <div class="card">
-          <div class="card-number">03</div>
-          <h3>Market Fragmentation</h3>
-          <p>
-            Producers, processors and legitimate buyers can operate in
-            disconnected parts of the value chain.
-          </p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <section id="solution">
-    <div class="container">
-
-      <div class="section-label">The Lexy Model</div>
-
-      <h2 class="section-title">
-        Shared infrastructure for processing, verification and better documentation.
-      </h2>
-
-      <p class="section-intro">
-        Lexy is developing a model where legitimate small-scale miners
-        can access shared processing and verification infrastructure
-        rather than having to build every capability independently.
-      </p>
-
-      <div class="grid">
-
-        <div class="card">
-          <div class="card-number">01</div>
-          <h3>Shared Processing</h3>
-          <p>
-            Develop accessible processing infrastructure that can serve
-            multiple legitimate mining operators.
-          </p>
-        </div>
-
-        <div class="card">
-          <div class="card-number">02</div>
-          <h3>Testing & Verification</h3>
-          <p>
-            Build processes for material testing, documentation and
-            traceable verification through appropriate technical partners.
-          </p>
-        </div>
-
-        <div class="card">
-          <div class="card-number">03</div>
-          <h3>Market Connection</h3>
-          <p>
-            Create clearer pathways between legitimate producers,
-            verified material information and appropriate buyers.
-          </p>
-        </div>
-
+      <div class="eyebrow">
+        NIGERIA • MINING • TECHNOLOGY • INFRASTRUCTURE
       </div>
 
-      <div class="flow">
-
-        <div class="flow-item">
-          <strong>01</strong>
-          <span>MINER</span>
-        </div>
-
-        <div class="flow-item">
-          <strong>02</strong>
-          <span>PROCESS</span>
-        </div>
-
-        <div class="flow-item">
-          <strong>03</strong>
-          <span>VERIFY</span>
-        </div>
-
-        <div class="flow-item">
-          <strong>04</strong>
-          <span>DOCUMENT</span>
-        </div>
-
-        <div class="flow-item">
-          <strong>05</strong>
-          <span>CONNECT</span>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <section id="experience">
-    <div class="container">
-
-      <div class="experience">
-
-        <div>
-          <div class="section-label">Practical Foundation</div>
-
-          <h2 class="section-title">
-            Built around real field and processing experience.
-          </h2>
-
-          <p class="section-intro">
-            The concept is informed by approximately three years of
-            practical experience across mineral buying, processing,
-            supervision, records and logistics.
-          </p>
-        </div>
-
-        <div class="experience-box">
-
-          <p>
-            Experience includes working alongside approximately seven
-            licensed miners and a wider network of roughly seventeen
-            people/miners.
-          </p>
-
-          <ul class="experience-list">
-
-            <li>Mineral buying and sourcing</li>
-            <li>Processing-mill operation</li>
-            <li>Processing supervision</li>
-            <li>Ore transportation and logistics</li>
-            <li>Records and documentation</li>
-            <li>Manual material washing and assessment</li>
-            <li>Exposure to mineral testing and analysis equipment</li>
-
-          </ul>
-
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <section>
-    <div class="container">
-
-      <div class="section-label">Geographic Exposure</div>
-
-      <h2 class="section-title">
-        Experience across multiple Nigerian mining environments.
-      </h2>
-
-      <p class="section-intro">
-        Practical activities and mineral-related work have included
-        several locations across northern Nigeria.
-      </p>
-
-      <div class="region-grid">
-
-        <div class="tag">Plateau State</div>
-        <div class="tag">Zamfara State</div>
-        <div class="tag">Kaduna State</div>
-        <div class="tag">Bauchi State</div>
-        <div class="tag">Maiduguri / Borno</div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <section>
-    <div class="container">
-
-      <div class="section-label">Industry Exposure</div>
-
-      <h2 class="section-title">
-        Minerals and materials encountered through practical activities.
-      </h2>
-
-      <div class="mineral-grid">
-
-        <div class="mineral">Iron Ore</div>
-        <div class="mineral">Tantalite</div>
-        <div class="mineral">Columbite</div>
-        <div class="mineral">Monazite</div>
-
-        <div class="mineral">Tin</div>
-        <div class="mineral">Zircon</div>
-        <div class="mineral">Rutile</div>
-        <div class="mineral">Gemstones</div>
-
-        <div class="mineral">Mica</div>
-        <div class="mineral">Silicon / Silicon-bearing Materials</div>
-
-      </div>
-
-      <p class="note">
-        These are materials encountered through practical sourcing,
-        processing and field activities. This list is not a claim of
-        independently certified mineral deposits or reserves.
-      </p>
-
-    </div>
-  </section>
-
-  <section class="pilot" id="pilot">
-    <div class="container">
-
-      <div class="pilot-grid">
-
-        <div>
-
-          <div class="section-label">Current Stage</div>
-
-          <h2 class="section-title">
-            From concept to pilot.
-          </h2>
-
-          <p class="section-intro">
-            Lexy Mineral Technologies is currently developing the
-            infrastructure model, operating framework and partnerships
-            required to test the concept responsibly.
-          </p>
-
-        </div>
-
-        <div>
-
-          <ul class="pilot-list">
-
-            <li>Technical and processing partnerships</li>
-            <li>Equipment and infrastructure partnerships</li>
-            <li>Funding and development support</li>
-            <li>Licensed mining participants</li>
-            <li>Testing and verification expertise</li>
-
-          </ul>
-
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <section>
-    <div class="container">
-
-      <div class="section-label">Long-Term Vision</div>
-
-      <h2 class="section-title">
-        A more organized, transparent and technology-enabled mineral value chain.
-      </h2>
-
-      <p class="section-intro">
-        The long-term objective is to develop a network of shared
-        processing and verification facilities that can help legitimate
-        small-scale miners improve material handling, documentation,
-        processing outcomes and access to appropriate markets.
-      </p>
-
-    </div>
-  </section>
-
-  <section class="cta" id="contact">
-
-    <div class="container">
-
-      <h2>
-        Help us build the next layer of Nigeria's mineral infrastructure.
-      </h2>
+      <h1>
+        Where Mineral
+        <span>Quality Meets Trust.</span>
+      </h1>
 
       <p>
-        We are open to conversations with technical partners, equipment
-        providers, development organizations, investors, testing experts
-        and legitimate mining participants.
+        Lexy Mineral Technologies is developing practical processing,
+        sampling, testing, aggregation and market infrastructure for a
+        more transparent mineral value chain.
       </p>
 
+      <div class="hero-actions">
+
+        <a href="#solutions" class="btn btn-primary">
+          Explore Lexy
+        </a>
+
+        <a
+          href="https://wa.me/2348145711445?text=Hello%20Lexy%20Mineral%20Technologies%2C%20I%20would%20like%20to%20discuss%20a%20potential%20partnership."
+          class="btn btn-outline"
+          target="_blank"
+        >
+          WhatsApp Lexy
+        </a>
+
+        <a href="#profile" class="btn btn-outline">
+          Company Profile
+        </a>
+
+      </div>
+
+      <div class="hero-note">
+        <strong>Current stage:</strong>
+        Lexy is currently developing its operating model,
+        partnerships and pilot capacity. It does not yet operate
+        its own commercial processing facility.
+      </div>
+
+    </div>
+
+
+    <div class="hero-visual">
+
+      <div class="orbit">
+        <div class="mineral-core"></div>
+      </div>
+
+      <div class="hero-stat stat-one">
+        <strong>Processing</strong>
+        <span>Verification • Aggregation</span>
+      </div>
+
+      <div class="hero-stat stat-two">
+        <strong>Technology</strong>
+        <span>Traceability • Market Access</span>
+      </div>
+
+    </div>
+
+  </div>
+
+</header>
+
+
+<!-- ================= TRUST BAR ================= -->
+
+<div class="trust">
+
+  <div class="container trust-grid">
+
+    <div class="trust-item">
+      <strong>Processing</strong>
+      <span>Shared infrastructure model</span>
+    </div>
+
+    <div class="trust-item">
+      <strong>Verification</strong>
+      <span>Sampling & testing workflows</span>
+    </div>
+
+    <div class="trust-item">
+      <strong>Aggregation</strong>
+      <span>Material sourcing & market support</span>
+    </div>
+
+    <div class="trust-item">
+      <strong>Traceability</strong>
+      <span>Documentation-led future platform</span>
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section id="about">
+
+  <div class="container">
+
+    <div class="section-label">
+      About Lexy
+    </div>
+
+    <h2 class="section-title">
+      Built from firsthand mineral-field experience.
+    </h2>
+
+    <p class="section-intro">
+      Lexy Mineral Technologies is an early-stage Nigerian
+      mining-technology venture being developed around practical
+      experience in mineral buying, processing, supervision,
+      records, transportation and material assessment.
+    </p>
+
+
+    <div class="card-grid">
+
+      <div class="card">
+        <div class="card-number">01</div>
+
+        <h3>Field Experience</h3>
+
+        <p>
+          Approximately three years of practical exposure across
+          Plateau, Zamfara, Kaduna, Bauchi and Borno/Maiduguri.
+        </p>
+      </div>
+
+
+      <div class="card">
+        <div class="card-number">02</div>
+
+        <h3>Operational Insight</h3>
+
+        <p>
+          Experience includes buying, processing-mill operations,
+          manual washing and concentration, supervision, records
+          and ore transportation.
+        </p>
+      </div>
+
+
+      <div class="card">
+        <div class="card-number">03</div>
+
+        <h3>Core Opportunity</h3>
+
+        <p>
+          Make processing, verification, documentation and market
+          connections more organized and accessible for legitimate
+          mineral operators.
+        </p>
+      </div>
+
+    </div>
+
+
+    <div class="about-highlight">
+
+      <div class="highlight">
+
+        <h3>Mission</h3>
+
+        <p>
+          To build practical infrastructure and technology that
+          improves mineral processing, verification, traceability
+          and market connectivity across Nigeria's mineral value
+          chain.
+        </p>
+
+      </div>
+
+
+      <div class="highlight light">
+
+        <h3>Vision</h3>
+
+        <p>
+          To become a trusted mineral infrastructure and
+          technology platform connecting responsible mineral
+          suppliers, processors, buyers and technical partners.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= SOLUTIONS ================= -->
+
+<section class="model" id="solutions">
+
+  <div class="container">
+
+    <div class="section-label">
+      Our Solutions
+    </div>
+
+    <h2 class="section-title">
+      A practical pathway from mineral source to market.
+    </h2>
+
+    <p class="section-intro">
+      Lexy is designed to support small-scale miners while
+      developing capabilities that can also serve cooperatives
+      and medium/large-scale operators.
+    </p>
+
+
+    <div class="card-grid">
+
+      <div class="card">
+
+        <div class="card-number">
+          01 • PROCESSING
+        </div>
+
+        <h3>Processing Access</h3>
+
+        <p>
+          Access suitable partner-mill processing today, with a
+          long-term objective of dedicated shared processing
+          infrastructure.
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <div class="card-number">
+          02 • SAMPLING & TESTING
+        </div>
+
+        <h3>Material Verification</h3>
+
+        <p>
+          Practical sampling and grade assessment, with qualified
+          or accredited external laboratories used where
+          appropriate.
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <div class="card-number">
+          03 • AGGREGATION & TRADING
+        </div>
+
+        <h3>Market Support</h3>
+
+        <p>
+          Aggregate suitable material and, when adequately funded
+          and operational, buy directly for established buyers
+          and customers.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <div class="solution-note">
+
+      <strong>The Lexy workflow:</strong>
+      Mineral source → Sample → Test → Process → Document →
+      Connect to market.
+
+    </div>
+
+
+    <div class="process-flow">
+
+      <div class="process-step">
+        <span>01</span>
+        <strong>SOURCE</strong>
+      </div>
+
+      <div class="process-step">
+        <span>02</span>
+        <strong>SAMPLE</strong>
+      </div>
+
+      <div class="process-step">
+        <span>03</span>
+        <strong>TEST</strong>
+      </div>
+
+      <div class="process-step">
+        <span>04</span>
+        <strong>PROCESS</strong>
+      </div>
+
+      <div class="process-step">
+        <span>05</span>
+        <strong>DOCUMENT</strong>
+      </div>
+
+      <div class="process-step">
+        <span>06</span>
+        <strong>CONNECT</strong>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= FIELD EXPERIENCE ================= -->
+
+<section class="experience" id="experience">
+
+  <div class="container">
+
+    <div class="experience-grid">
+
+      <div>
+
+        <div class="section-label">
+          Founder's Field Perspective
+        </div>
+
+        <h2 class="section-title">
+          The model starts with what happens on the ground.
+        </h2>
+
+        <p class="section-intro">
+          Lexy's concept comes from direct exposure to practical
+          gaps faced by mineral suppliers and processors.
+        </p>
+
+
+        <div class="location-tags">
+          <span class="location-tag">Plateau</span>
+          <span class="location-tag">Zamfara</span>
+          <span class="location-tag">Kaduna</span>
+          <span class="location-tag">Bauchi</span>
+          <span class="location-tag">Borno</span>
+        </div>
+
+      </div>
+
+
+      <div>
+
+        <ul class="experience-list">
+
+          <li>
+            Mineral buyer and sourcing experience
+          </li>
+
+          <li>
+            Processing-mill operator experience
+          </li>
+
+          <li>
+            Processing supervision and records
+          </li>
+
+          <li>
+            Ore transportation and material handling
+          </li>
+
+          <li>
+            Manual washing and concentration
+          </li>
+
+          <li>
+            Exposure to mineral testing and analysis equipment
+          </li>
+
+          <li>
+            Relationships with licensed mining participants
+          </li>
+
+          <li>
+            Experience across multiple mineral materials
+          </li>
+
+        </ul>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= MINERALS ================= -->
+
+<section class="minerals" id="minerals">
+
+  <div class="container">
+
+    <div class="section-label">
+      Minerals & Materials
+    </div>
+
+    <h2 class="section-title">
+      Experience across a range of mineral materials.
+    </h2>
+
+    <p class="section-intro">
+      These materials reflect field exposure and intended
+      commercial interest. They are not claims of certified
+      reserves, deposits or Lexy-owned mineral assets.
+    </p>
+
+
+    <div class="mineral-grid">
+
+      <div class="mineral">
+        <div>
+          <strong>Iron Ore</strong>
+          <small>Red & dark/black varieties</small>
+        </div>
+      </div>
+
+      <div class="mineral">
+        <div>
+          <strong>Tantalite</strong>
+        </div>
+      </div>
+
+      <div class="mineral">
+        <div>
+          <strong>Columbite</strong>
+        </div>
+      </div>
+
+      <div class="mineral">
+        <div>
+          <strong>Monazite</strong>
+        </div>
+      </div>
+
+      <div class="mineral">
+        <div>
+          <strong>Zircon</strong>
+        </div>
+      </div>
+
+      <div class="mineral">
+        <div>
+          <strong>Rutile</strong>
+        </div>
+      </div>
+
+      <div class="mineral">
+        <div>
+          <strong>Tin</strong>
+        </div>
+      </div>
+
+      <div class="mineral">
+        <div>
+          <strong>Gemstones</strong>
+        </div>
+      </div>
+
+      <div class="mineral">
+        <div>
+          <strong>Mica</strong>
+        </div>
+      </div>
+
+      <div class="mineral">
+        <div>
+          <strong>Silicon / Silicon-bearing</strong>
+        </div>
+      </div>
+
+    </div>
+
+
+    <p class="mineral-note">
+      Future mineral imagery should use authentic field and
+      material photographs where available, rather than implying
+      that illustrative images represent Lexy's owned mineral
+      assets.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- ================= WHO WE SERVE ================= -->
+
+<section>
+
+  <div class="container">
+
+    <div class="section-label">
+      Who We Serve
+    </div>
+
+    <h2 class="section-title">
+      Designed around the mineral value chain.
+    </h2>
+
+    <p class="section-intro">
+      Lexy's developing model is intended to support participants
+      at different stages of the mineral supply and processing
+      ecosystem.
+    </p>
+
+
+    <div class="serve-grid">
+
+      <div class="serve">
+        <h3>Small-scale & Independent Miners</h3>
+        <p>
+          Access to practical processing, sampling, testing and
+          market-support services.
+        </p>
+      </div>
+
+      <div class="serve">
+        <h3>Mining Cooperatives</h3>
+        <p>
+          Potential shared workflows for material handling,
+          documentation and aggregation.
+        </p>
+      </div>
+
+      <div class="serve">
+        <h3>Medium & Large-scale Operators</h3>
+        <p>
+          Future collaboration around processing, supply,
+          verification, logistics and technology.
+        </p>
+      </div>
+
+      <div class="serve">
+        <h3>Mineral Buyers</h3>
+        <p>
+          Potential access to documented material and structured
+          supplier relationships.
+        </p>
+      </div>
+
+      <div class="serve">
+        <h3>Technical Partners</h3>
+        <p>
+          Opportunities across geology, testing, engineering,
+          digital systems and responsible supply chains.
+        </p>
+      </div>
+
+      <div class="serve">
+        <h3>Development & Funding Partners</h3>
+        <p>
+          Collaboration around infrastructure, formalization,
+          capacity building and responsible mining.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= RESPONSIBLE MINING ================= -->
+
+<section class="responsible" id="responsible">
+
+  <div class="container">
+
+    <div class="section-label">
+      Responsible Mining
+    </div>
+
+    <h2 class="section-title">
+      Responsible operating principles from the beginning.
+    </h2>
+
+    <p class="section-intro">
+      Lexy intends to build safety, environmental awareness,
+      traceability and transparency into its operating model.
+      These are intended principles, not current certification
+      claims.
+    </p>
+
+
+    <div class="principle-grid">
+
+      <div class="principle">
+        <h3>Safety</h3>
+        <p>
+          Promote safer operating practices and appropriate
+          material-handling procedures.
+        </p>
+      </div>
+
+      <div class="principle">
+        <h3>Environment</h3>
+        <p>
+          Build environmental responsibility into processing and
+          sourcing decisions.
+        </p>
+      </div>
+
+      <div class="principle">
+        <h3>Traceability</h3>
+        <p>
+          Capture source, sampling, testing and relevant
+          transaction information.
+        </p>
+      </div>
+
+      <div class="principle">
+        <h3>Transparency</h3>
+        <p>
+          Use clearer documentation around material quality and
+          service workflows.
+        </p>
+      </div>
+
+      <div class="principle">
+        <h3>Responsibility</h3>
+        <p>
+          Work toward lawful and responsible mineral
+          supply-chain practices.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= COMPLIANCE ================= -->
+
+<section>
+
+  <div class="container">
+
+    <div class="section-label">
+      Compliance Position
+    </div>
+
+    <h2 class="section-title">
+      Transparent about where Lexy is today.
+    </h2>
+
+    <div class="compliance-grid">
+
+      <div class="compliance-box dark">
+
+        <h3>Current Stage</h3>
+
+        <p>
+          Lexy is currently in the pre-registration/development
+          stage. An older business licence exists but requires
+          renewal.
+        </p>
+
+        <br>
+
+        <p>
+          Lexy does not currently claim an active commercial
+          mining licence, laboratory accreditation or its own
+          commercial processing facility.
+        </p>
+
+      </div>
+
+
+      <div class="compliance-box">
+
+        <h3>Operating Direction</h3>
+
+        <p>
+          Where applicable, Lexy works through relationships with
+          licensed miners and intends to formalize its business,
+          licensing, compliance and technical framework as
+          operations develop.
+        </p>
+
+        <br>
+
+        <p>
+          Testing may involve qualified or accredited external
+          laboratories where appropriate to the material,
+          transaction and customer requirement.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= AREAS ================= -->
+
+<section class="areas">
+
+  <div class="container">
+
+    <div class="section-label">
+      Areas of Experience & Potential Focus
+    </div>
+
+    <h2 class="section-title">
+      A developing Nigerian operating footprint.
+    </h2>
+
+    <p class="section-intro">
+      The locations below represent field experience,
+      relationships or potential future engagement — not
+      current Lexy-owned facilities.
+    </p>
+
+
+    <div class="area-grid">
+
+      <div class="area">
+        Plateau State
+      </div>
+
+      <div class="area">
+        Bauchi State
+      </div>
+
+      <div class="area">
+        Kaduna State
+      </div>
+
+      <div class="area">
+        Zamfara State
+      </div>
+
+      <div class="area">
+        Borno State
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= INVESTORS ================= -->
+
+<section class="investors" id="investors">
+
+  <div class="container">
+
+    <div class="section-label">
+      Investors & Partners
+    </div>
+
+    <h2 class="section-title">
+      Building the capability to move from concept to infrastructure.
+    </h2>
+
+    <p class="section-intro">
+      Lexy is open to capital, technical expertise and strategic
+      partnerships that can support responsible pilot operations
+      and long-term shared mineral infrastructure.
+    </p>
+
+
+    <div class="opportunity-grid">
+
+      <div class="opportunity">
+        <strong>Formalization</strong>
+        <span>
+          Registration, licensing and foundational compliance
+          systems.
+        </span>
+      </div>
+
+      <div class="opportunity">
+        <strong>Processing Infrastructure</strong>
+        <span>
+          Equipment, mill access and future dedicated processing
+          capacity.
+        </span>
+      </div>
+
+      <div class="opportunity">
+        <strong>Working Capital</strong>
+        <span>
+          Capital for suitable mineral aggregation and purchases
+          when operational.
+        </span>
+      </div>
+
+      <div class="opportunity">
+        <strong>Testing & Verification</strong>
+        <span>
+          Technical services, testing relationships and laboratory
+          support.
+        </span>
+      </div>
+
+      <div class="opportunity">
+        <strong>Logistics</strong>
+        <span>
+          Transportation, storage and material-handling
+          capability.
+        </span>
+      </div>
+
+      <div class="opportunity">
+        <strong>Digital Systems</strong>
+        <span>
+          Data, traceability, customer workflows and future
+          platform development.
+        </span>
+      </div>
+
+      <div class="opportunity">
+        <strong>Technical & Development Support</strong>
+        <span>
+          Geology, engineering, environmental, responsible
+          sourcing and business expertise.
+        </span>
+      </div>
+
+      <div class="opportunity">
+        <strong>Market Partnerships</strong>
+        <span>
+          Connections with legitimate buyers and downstream
+          mineral businesses.
+        </span>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= ROADMAP ================= -->
+
+<section>
+
+  <div class="container">
+
+    <div class="section-label">
+      Development Roadmap
+    </div>
+
+    <h2 class="section-title">
+      A staged path to a scalable mineral platform.
+    </h2>
+
+    <div class="roadmap">
+
+      <div class="roadmap-item">
+        <div class="roadmap-number">01</div>
+        <strong>FOUNDATION</strong>
+        <span>
+          Formalization, operating model, compliance planning and
+          strategic partnerships.
+        </span>
+      </div>
+
+      <div class="roadmap-item">
+        <div class="roadmap-number">02</div>
+        <strong>PILOT</strong>
+        <span>
+          Processing, sampling, testing and customer workflows
+          through suitable partners.
+        </span>
+      </div>
+
+      <div class="roadmap-item">
+        <div class="roadmap-number">03</div>
+        <strong>INFRASTRUCTURE</strong>
+        <span>
+          Dedicated shared processing and mineral-verification
+          infrastructure.
+        </span>
+      </div>
+
+      <div class="roadmap-item">
+        <div class="roadmap-number">04</div>
+        <strong>DIGITAL PLATFORM</strong>
+        <span>
+          Miner accounts, material records, service tracking,
+          reports and buyer connections.
+        </span>
+      </div>
+
+      <div class="roadmap-item">
+        <div class="roadmap-number">05</div>
+        <strong>NETWORK</strong>
+        <span>
+          A broader network connecting miners, processors, buyers
+          and technical partners.
+        </span>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= DIGITAL PLATFORM ================= -->
+
+<section class="digital">
+
+  <div class="container">
+
+    <div class="section-label">
+      Future Digital Platform
+    </div>
+
+    <h2 class="section-title">
+      Technology that strengthens the physical mineral workflow.
+    </h2>
+
+    <p class="section-intro">
+      These capabilities are planned for later stages, when
+      operational capacity, technical partners and funding are
+      sufficient.
+    </p>
+
+
+    <div class="digital-grid">
+
+      <div class="digital-card">
+        <h3>Miner Accounts</h3>
+        <p>
+          Structured onboarding and records for participating
+          miners.
+        </p>
+      </div>
+
+      <div class="digital-card">
+        <h3>Material Records</h3>
+        <p>
+          Source, sampling, processing and verification
+          information.
+        </p>
+      </div>
+
+      <div class="digital-card">
+        <h3>Service Tracking</h3>
+        <p>
+          Track processing and related customer workflows.
+        </p>
+      </div>
+
+      <div class="digital-card">
+        <h3>Testing Reports</h3>
+        <p>
+          Organize appropriate test and verification
+          documentation.
+        </p>
+      </div>
+
+      <div class="digital-card">
+        <h3>Buyer Connections</h3>
+        <p>
+          Develop clearer pathways between verified material
+          and buyers.
+        </p>
+      </div>
+
+      <div class="digital-card">
+        <h3>Traceability Layer</h3>
+        <p>
+          Build a documented chain of information as operational
+          capacity grows.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= COMPANY PROFILE ================= -->
+
+<section class="profile" id="profile">
+
+  <div class="container">
+
+    <div class="profile-box">
+
+      <div>
+
+        <div class="section-label">
+          Company Profile
+        </div>
+
+        <h2 class="section-title">
+          Request the official Lexy company profile.
+        </h2>
+
+        <p>
+          The full company profile covers Lexy's model, field
+          experience, solutions, minerals, responsible operating
+          principles, compliance position, development roadmap
+          and partnership opportunities.
+        </p>
+
+      </div>
+
+
       <a
-        href="mailto:lexymineraltechnologies@gmail.com?subject=Lexy%20Mineral%20Technologies%20Partnership"
         class="btn btn-primary"
+        href="mailto:lexymineraltechnologies@gmail.com?subject=Request%20for%20Lexy%20Mineral%20Technologies%20Company%20Profile"
       >
-        Contact Lexy Mineral Technologies
+        Request Profile
       </a>
 
     </div>
 
-  </section>
+  </div>
 
-  <footer>
+</section>
 
-    <div class="container footer-inner">
 
-      <div class="footer-brand">
-        LEXY <span>MINERAL TECHNOLOGIES</span>
-      </div>
+<!-- ================= FAQ ================= -->
 
-      <div>
-        lexymineraltechnologies@gmail.com
-      </div>
+<section>
 
-      <div>
-        © 2026 Lexy Mineral Technologies
-      </div>
+  <div class="container">
+
+    <div class="section-label">
+      Frequently Asked Questions
+    </div>
+
+    <h2 class="section-title">
+      Questions partners and customers may have.
+    </h2>
+
+
+    <div class="faq">
+
+      <details>
+        <summary>
+          Which minerals does Lexy focus on?
+        </summary>
+
+        <p>
+          Initial experience and interest include iron ore,
+          tantalite, columbite, monazite, zircon, rutile, tin,
+          gemstones, mica and silicon/silicon-bearing materials.
+          Acceptance will depend on legality, testing, market
+          requirements and available capacity.
+        </p>
+      </details>
+
+
+      <details>
+        <summary>
+          Can small-scale miners access Lexy?
+        </summary>
+
+        <p>
+          Yes. The model is specifically intended to make
+          processing, sampling, testing and market support more
+          accessible to small-scale and independent miners.
+        </p>
+      </details>
+
+
+      <details>
+        <summary>
+          Will Lexy serve medium and large-scale operators?
+        </summary>
+
+        <p>
+          The developing model is intended to support a wider
+          range of operators as technical capacity, infrastructure
+          and compliance systems grow.
+        </p>
+      </details>
+
+
+      <details>
+        <summary>
+          Does Lexy currently operate its own processing facility?
+        </summary>
+
+        <p>
+          No. At this development stage, Lexy is working toward
+          its own shared processing and verification infrastructure
+          and may use suitable partner mills for early operations.
+        </p>
+      </details>
+
+
+      <details>
+        <summary>
+          How does Lexy's verification approach work?
+        </summary>
+
+        <p>
+          The intended workflow is based on proper material
+          identification, representative sampling, testing or
+          analysis where appropriate, documentation and clear
+          communication of results.
+        </p>
+      </details>
+
+
+      <details>
+        <summary>
+          How can investors or technical partners collaborate?
+        </summary>
+
+        <p>
+          Potential collaboration areas include equipment,
+          processing, testing, geology, logistics, digital
+          systems, responsible supply chains, funding,
+          formalization and business development.
+        </p>
+      </details>
 
     </div>
 
-  </footer>
+  </div>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section class="contact" id="contact">
+
+  <div class="container">
+
+    <div class="section-label">
+      Contact Lexy
+    </div>
+
+    <h2 class="section-title">
+      Start a serious conversation.
+    </h2>
+
+
+    <div class="contact-grid">
+
+      <div class="contact-info">
+
+        <h3>
+          LEXY MINERAL TECHNOLOGIES
+        </h3>
+
+        <p>
+          <strong>
+            Where Mineral Quality Meets Trust.
+          </strong>
+        </p>
+
+        <p>
+          WhatsApp:
+          <a
+            href="https://wa.me/2348145711445?text=Hello%20Lexy%20Mineral%20Technologies%2C%20I%20would%20like%20to%20make%20an%20inquiry."
+            target="_blank"
+          >
+            +234 814 571 1445
+          </a>
+        </p>
+
+        <p>
+          Email:
+          <a href="mailto:lexymineraltechnologies@gmail.com">
+            lexymineraltechnologies@gmail.com
+          </a>
+        </p>
+
+        <p>
+          For investors, miners, mineral buyers, technical
+          partners, equipment providers and development
+          organizations.
+        </p>
+
+
+        <br>
+
+        <a
+          class="btn btn-primary"
+          href="https://wa.me/2348145711445?text=Hello%20Lexy%20Mineral%20Technologies%2C%20I%20would%20like%20to%20discuss%20your%20services."
+          target="_blank"
+        >
+          Chat on WhatsApp
+        </a>
+
+      </div>
+
+
+      <form
+        action="mailto:lexymineraltechnologies@gmail.com"
+        method="post"
+        enctype="text/plain"
+      >
+
+        <label for="name">
+          Name
+        </label>
+
+        <input
+          id="name"
+          type="text"
+          name="Name"
+          placeholder="Your name"
+          required
+        >
+
+
+        <label for="email">
+          Email
+        </label>
+
+        <input
+          id="email"
+          type="email"
+          name="Email"
+          placeholder="your@email.com"
+          required
+        >
+
+
+        <label for="inquiry">
+          Inquiry Type
+        </label>
+
+        <select
+          id="inquiry"
+          name="Inquiry"
+        >
+
+          <option>
+            Processing
+          </option>
+
+          <option>
+            Sampling / Testing
+          </option>
+
+          <option>
+            Mineral Supply / Buying
+          </option>
+
+          <option>
+            Partnership
+          </option>
+
+          <option>
+            Investment
+          </option>
+
+          <option>
+            Technical Collaboration
+          </option>
+
+          <option>
+            Equipment / Infrastructure
+          </option>
+
+          <option>
+            General Inquiry
+          </option>
+
+        </select>
+
+
+        <label for="message">
+          Message
+        </label>
+
+        <textarea
+          id="message"
+          name="Message"
+          placeholder="Tell us how you would like to work with Lexy..."
+          required
+        ></textarea>
+
+
+        <button
+          class="btn btn-primary"
+          type="submit"
+        >
+          Send Inquiry
+        </button>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+  <div class="container footer">
+
+    <div>
+      <strong>
+        LEXY <span>MINERAL TECHNOLOGIES</span>
+      </strong>
+    </div>
+
+    <div>
+      lexymineraltechnologies@gmail.com
+    </div>
+
+    <div>
+      +234 814 571 1445
+    </div>
+
+    <div>
+      © 2026 Lexy Mineral Technologies
+    </div>
+
+  </div>
+
+</footer>
 
 </body>
 </html>
