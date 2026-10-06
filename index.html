@@ -155,38 +155,13 @@ header{
   font-weight:900;
 }
 
-.logo-mark{
-  width:42px;
-  height:42px;
-  position:relative;
-  display:grid;
-  place-items:center;
-  border:1px solid rgba(224,192,120,.65);
-  transform:rotate(45deg);
-}
-
-.logo-mark span{
-  width:17px;
-  height:17px;
-  background:var(--gold);
-  transform:rotate(45deg);
-}
-
-.logo-text{
-  line-height:1.05;
-}
-
-.logo-text strong{
-  display:block;
-  font-size:1.05rem;
-  letter-spacing:.02em;
-}
-
-.logo-text small{
-  color:#bfcfc7;
-  font-size:.62rem;
-  letter-spacing:.13em;
-  text-transform:uppercase;
+.brand-logo{
+  width:82px;
+  height:64px;
+  object-fit:contain;
+  background:white;
+  border-radius:8px;
+  padding:3px;
 }
 
 .nav-links{
@@ -848,7 +823,7 @@ header{
   border-radius:30px;
   background:
     linear-gradient(120deg,rgba(6,37,28,.96),rgba(14,65,49,.9)),
-    url("https://cisp.cachefly.net/assets/articles/images/resized/0001175236_resized_miningindabapreviewfortunaminingseguelaminecotedivoireprocessing01251022.jpeg") center/cover;
+    url("https://commons.wikimedia.org/wiki/Special:Redirect/file/Snap_Lake_Diamond_Mine_Processing_Plant.jpg") center/cover;
   color:white;
 }
 
@@ -1141,6 +1116,11 @@ footer a{
   .footer-grid{
     grid-template-columns:1fr 1fr;
   }
+
+  .brand-logo{
+    width:78px;
+    height:60px;
+  }
 }
 
 @media(max-width:600px){
@@ -1203,6 +1183,11 @@ footer a{
   .contact-form{
     padding:23px;
   }
+
+  .brand-logo{
+    width:72px;
+    height:56px;
+  }
 }
 </style>
 </head>
@@ -1214,11 +1199,11 @@ footer a{
   <div class="container nav">
 
     <a href="#top" class="logo">
-      <span class="logo-mark"><span></span></span>
-      <span class="logo-text">
-        <strong>LEXY</strong>
-        <small>Mineral Technologies</small>
-      </span>
+      <img
+        class="brand-logo"
+        src="lexy-logo.jpg"
+        alt="Lexy Mineral Technologies logo"
+      >
     </a>
 
     <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
@@ -1243,7 +1228,7 @@ footer a{
 
   <div class="hero-image">
     <img
-      src="https://magazine.cim.org/media/3018992/pp1.jpg"
+      src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Snap_Lake_Diamond_Mine_Processing_Plant.jpg"
       alt="Large-scale mineral processing and crushed ore conveyor operation"
     >
   </div>
@@ -1314,7 +1299,7 @@ footer a{
 
     <div class="large-image">
       <img
-        src="https://www.thegef.org/sites/default/files/styles/main_image_content_width/public/UNEP_Kenya_ASGM.jpg?h=e7ded9ed&itok=ql9IXi_t"
+        src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Illegal_Gold_mining_Nigeria2.jpg"
         alt="Artisanal miner using a simple gravity separation system"
       >
 
@@ -1385,7 +1370,7 @@ footer a{
 
         <div class="solution-image">
           <img
-            src="https://www.juniorminingnetwork.com/images/jmn_feeder/newsfile/2025/MAE270608_4ebf7777546fe9e4_001full.jpg-68f0d0ea07069-900px.jpg"
+            src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Snap_Lake_Diamond_Mine_Processing_Plant.jpg"
             alt="Wheel loader handling crushed mineral ore"
           >
         </div>
@@ -1410,7 +1395,7 @@ footer a{
 
         <div class="solution-image">
           <img
-            src="https://image.kindle-tech.com/images/faqs/6151/main_image_1765096752_69353d30efc91.webp"
+            src="https://commons.wikimedia.org/wiki/Special:Redirect/file/CSIRO_ScienceImage_10755_Dielectrics.jpg"
             alt="Rock samples being prepared for geochemical analysis"
           >
         </div>
@@ -1441,7 +1426,7 @@ footer a{
 
         <div class="solution-image">
           <img
-            src="https://storage.googleapis.com/the-pick/051ae929-ca86-467e-a312-c6841901321d-NMG_Crown_Prince_Gold_Mine_Commences_Production.jpeg"
+            src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Russia%2C_Krasnojarsk%2C_Norilsk_-_%D0%91%D0%BE%D0%BB%D1%8C%D1%88%D0%B0%D1%8F_%D0%BE%D0%B1%D0%BE%D0%B3%D0%B0%D1%82%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F_%D1%84%D0%B0%D0%B1%D1%80%D0%B8%D0%BA%D0%B0_%28%D0%91%D0%9E%D0%A4%29_WMID4318649.jpg"
             alt="Mineral stockpile and ore loading operation"
           >
         </div>
@@ -1470,7 +1455,7 @@ footer a{
 
         <div class="solution-image">
           <img
-            src="https://cisp.cachefly.net/assets/articles/images/resized/0001175236_resized_miningindabapreviewfortunaminingseguelaminecotedivoireprocessing01251022.jpeg"
+            src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Snap_Lake_Diamond_Mine_Processing_Plant.jpg"
             alt="Large mineral processing facility in Africa"
           >
         </div>
@@ -1716,6 +1701,7 @@ footer a{
     </div>
 
   </div>
+
 </section>
 
 
@@ -1737,7 +1723,7 @@ footer a{
 
       <div class="gallery-item">
         <img
-          src="https://magazine.cim.org/media/3018992/pp1.jpg"
+          src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Snap_Lake_Diamond_Mine_Processing_Plant.jpg"
           alt="Crushed ore moving through a mineral processing conveyor"
         >
         <div class="gallery-label">Ore processing & material movement</div>
@@ -1745,7 +1731,7 @@ footer a{
 
       <div class="gallery-item">
         <img
-          src="https://www.thegef.org/sites/default/files/styles/main_image_content_width/public/UNEP_Kenya_ASGM.jpg?h=e7ded9ed&itok=ql9IXi_t"
+          src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Illegal_Gold_mining_Nigeria2.jpg"
           alt="Manual mineral concentration using a sluice"
         >
         <div class="gallery-label">Manual concentration experience</div>
@@ -1753,7 +1739,7 @@ footer a{
 
       <div class="gallery-item">
         <img
-          src="https://image.kindle-tech.com/images/faqs/6151/main_image_1765096752_69353d30efc91.webp"
+          src="https://commons.wikimedia.org/wiki/Special:Redirect/file/CSIRO_ScienceImage_10755_Dielectrics.jpg"
           alt="Rock samples being prepared for analysis"
         >
         <div class="gallery-label">Sampling & sample preparation</div>
@@ -1761,16 +1747,16 @@ footer a{
 
       <div class="gallery-item">
         <img
-          src="https://cdn.beritajejakfakta.id/media/images/2026/04/wtLHcAZVcS.jpeg?fit=1&height=&location=1&quality=90&width="
-          alt="Mining workers planting vegetation during site rehabilitation"
+          src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Bosomtwe_Land_reclamation_site.jpg"
+          alt="Mining workers carrying out land rehabilitation"
         >
         <div class="gallery-label">Environmental rehabilitation</div>
       </div>
 
       <div class="gallery-item">
         <img
-          src="https://cisp.cachefly.net/assets/articles/images/resized/0001175236_resized_miningindabapreviewfortunaminingseguelaminecotedivoireprocessing01251022.jpeg"
-          alt="Large mineral processing plant in Africa"
+          src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Russia%2C_Krasnojarsk%2C_Norilsk_-_%D0%91%D0%BE%D0%BB%D1%8C%D1%88%D0%B0%D1%8F_%D0%BE%D0%B1%D0%BE%D0%B3%D0%B0%D1%82%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F_%D1%84%D0%B0%D0%B1%D1%80%D0%B8%D0%BA%D0%B0_%28%D0%91%D0%9E%D0%A4%29_WMID4318649.jpg"
+          alt="Large mineral processing plant"
         >
         <div class="gallery-label">Future shared infrastructure</div>
       </div>
@@ -1802,7 +1788,7 @@ footer a{
       <article class="mineral-card">
 
         <img
-          src="https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/media/images/gold_ore_0.jpg"
+          src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Sample_of_gold_ore_from_the_Boundary_Red_Mountain_Mine.jpg"
           alt="Gold ore specimen"
         >
 
@@ -1817,7 +1803,7 @@ footer a{
       <article class="mineral-card">
 
         <img
-          src="https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/media/images/galena_and_chalcoptrite_0.jpg"
+          src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Columbite.jpg"
           alt="Galena and chalcopyrite mineral specimen"
         >
 
@@ -1832,7 +1818,7 @@ footer a{
       <article class="mineral-card">
 
         <img
-          src="https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/thumbnails/image/NikiWintzer-Stibnite-Antimony.jpg"
+          src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Stibnite.jpg"
           alt="Stibnite mineral specimen"
         >
 
@@ -1847,7 +1833,7 @@ footer a{
       <article class="mineral-card">
 
         <img
-          src="https://www.usgs.gov/sites/default/files/styles/og_image/public/media/images/bauxite-aluminum-ore.jpg"
+          src="https://commons.wikimedia.org/wiki/Special:Redirect/file/BauxiteUSGOV.jpg"
           alt="Bauxite ore specimen"
         >
 
@@ -1904,7 +1890,7 @@ footer a{
       <article class="serve-card">
 
         <img
-          src="https://www.thegef.org/sites/default/files/styles/main_image_content_width/public/UNEP_Kenya_ASGM.jpg?h=e7ded9ed&itok=ql9IXi_t"
+          src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Illegal_Gold_mining_Nigeria2.jpg"
           alt="Small-scale mineral processing activity"
         >
 
@@ -1922,7 +1908,7 @@ footer a{
       <article class="serve-card">
 
         <img
-          src="https://cisp.cachefly.net/assets/articles/images/resized/0001175236_resized_miningindabapreviewfortunaminingseguelaminecotedivoireprocessing01251022.jpeg"
+          src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Snap_Lake_Diamond_Mine_Processing_Plant.jpg"
           alt="Large mineral processing facility"
         >
 
@@ -1951,7 +1937,7 @@ footer a{
     <div class="experience-image">
 
       <img
-        src="https://static.dw.com/image/37489842_804.webp"
+        src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Illegal_Gold_mining_Nigeria1.jpg"
         alt="Manual mineral washing and concentration at a riverside operation"
       >
 
@@ -2180,7 +2166,7 @@ footer a{
     <div class="responsible-image">
 
       <img
-        src="https://cdn.beritajejakfakta.id/media/images/2026/04/wtLHcAZVcS.jpeg?fit=1&height=&location=1&quality=90&width="
+        src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Bosomtwe_Land_reclamation_site.jpg"
         alt="Mining workers carrying out land rehabilitation through planting"
       >
 
@@ -2544,12 +2530,11 @@ footer a{
       <div>
 
         <div class="logo" style="margin-bottom:18px;">
-          <span class="logo-mark"><span></span></span>
-
-          <span class="logo-text">
-            <strong>LEXY</strong>
-            <small>Mineral Technologies</small>
-          </span>
+          <img
+            class="brand-logo"
+            src="lexy-logo.jpg"
+            alt="Lexy Mineral Technologies logo"
+          >
         </div>
 
         <p>
