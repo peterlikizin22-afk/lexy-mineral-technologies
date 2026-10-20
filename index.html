@@ -1,217 +1,1255 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#174D35">
-<title>Lexy Mineral Technologies | Mineral Sourcing, Processing & Trading</title>
-<meta name="description" content="Lexy Mineral Technologies is developing an integrated mineral business focused on sourcing, purchasing, processing access, quality assessment, aggregation and commercial trading in Nigeria.">
-<meta property="og:title" content="Lexy Mineral Technologies">
-<meta property="og:description" content="Building better infrastructure for the mineral value chain.">
-<meta property="og:type" content="website">
-<meta property="og:image" content="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1200&q=80">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<style>
-:root{--green:#174D35;--deep:#103B2B;--white:#fff;--soft:#F5F7F4;--ink:#242A27;--gold:#C6A15B;--muted:#69736D;--line:#e1e7e2;--radius:18px;--shadow:0 18px 45px rgba(16,59,43,.09)}
-*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:88px}body{margin:0;font-family:Inter,Arial,sans-serif;color:var(--ink);line-height:1.65;background:#fff}img{max-width:100%;display:block}a{color:inherit;text-decoration:none}button,input,select,textarea{font:inherit}.container{width:min(1160px,calc(100% - 40px));margin:auto}.eyebrow{display:inline-flex;align-items:center;gap:10px;color:var(--green);font-weight:700;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase}.eyebrow:before{content:"";width:25px;height:2px;background:var(--gold)}h1,h2,h3,h4{font-family:Manrope,Inter,sans-serif;line-height:1.18;letter-spacing:-.035em;margin:0 0 18px}h1{font-size:clamp(2.6rem,5.8vw,5rem);font-weight:800}h2{font-size:clamp(2rem,3.5vw,3.25rem);font-weight:800}h3{font-size:1.3rem}p{margin:0 0 18px;color:var(--muted)}.section{padding:96px 0}.section.soft{background:var(--soft)}.section.dark{background:var(--deep);color:#fff}.section.dark p{color:#cbd7ce}.section-head{max-width:720px;margin-bottom:42px}.section-head.center{text-align:center;margin-inline:auto}.section-head.center .eyebrow{justify-content:center}.section-head p{font-size:1.05rem}.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:13px 20px;border-radius:8px;font-weight:700;font-size:.91rem;border:1px solid transparent;transition:transform .2s,background .2s;cursor:pointer}.btn:hover{transform:translateY(-2px)}.btn.primary{background:var(--green);color:white}.btn.primary:hover{background:var(--deep)}.btn.light{background:#fff;color:var(--green)}.btn.outline{border-color:rgba(255,255,255,.45);color:#fff}.btn.outline-green{border-color:#c9d7ce;color:var(--green)}.btn.gold{background:var(--gold);color:#1f2a22}.btn-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}.nav-wrap{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.96);backdrop-filter:blur(14px);border-bottom:1px solid rgba(225,231,226,.8)}.nav{height:78px;display:flex;align-items:center;justify-content:space-between;gap:22px}.brand{display:flex;align-items:center;gap:12px;min-width:max-content}.logo{width:42px;height:42px;display:grid;place-items:center;position:relative;color:var(--green);font-family:Manrope,sans-serif;font-size:25px;font-weight:800}.logo:before{content:"";position:absolute;inset:5px;border:2.5px solid var(--green);transform:rotate(45deg);border-radius:2px}.logo span{position:relative;z-index:1}.brand-name{font:800 .95rem/1.15 Manrope,sans-serif;letter-spacing:-.025em}.brand-name small{display:block;color:var(--muted);font:600 .64rem/1.5 Inter,sans-serif;letter-spacing:.11em;text-transform:uppercase}.nav-links{display:flex;align-items:center;gap:21px}.nav-links a{font-size:.82rem;font-weight:600;color:#46514a}.nav-links a:hover{color:var(--green)}.nav-cta{white-space:nowrap}.menu-toggle{display:none;background:transparent;border:1px solid var(--line);border-radius:8px;width:44px;height:42px;font-size:1.35rem;color:var(--green)}.hero{position:relative;overflow:hidden;background:var(--deep);color:white;min-height:620px;display:flex;align-items:center}.hero-bg{position:absolute;inset:0;background:linear-gradient(90deg,rgba(9,38,27,.96) 0%,rgba(9,38,27,.83) 48%,rgba(9,38,27,.24) 100%),url('https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=2000&q=85') center/cover no-repeat}.hero-content{position:relative;z-index:1;padding:88px 0;max-width:760px}.hero .eyebrow{color:#e1c98f}.hero h1{max-width:800px}.hero h1 span{color:#d8c18a}.hero p{font-size:1.08rem;max-width:660px;color:#e0e8e2}.hero-note{display:flex;align-items:center;gap:10px;margin-top:38px;font-size:.82rem;color:#d2ddd5}.hero-note i{display:block;width:8px;height:8px;border-radius:50%;background:var(--gold)}.intro-grid,.founder-grid,.digital-grid,.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}.image-frame{position:relative;border-radius:var(--radius);overflow:hidden;min-height:370px;background:#dfe5df}.image-frame img{width:100%;height:100%;min-height:370px;object-fit:cover}.image-caption{position:absolute;left:18px;bottom:18px;background:rgba(16,59,43,.92);color:white;padding:12px 15px;border-radius:8px;font-size:.78rem}.check-list{list-style:none;padding:0;margin:24px 0}.check-list li{position:relative;padding:0 0 0 30px;margin:12px 0;color:#46514a}.check-list li:before{content:"✓";position:absolute;left:0;top:0;color:var(--green);font-weight:800}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:0 6px 20px rgba(20,50,35,.025);transition:transform .2s,box-shadow .2s}.card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}.card-image{height:210px;overflow:hidden;background:#e6ebe6}.card-image img{height:100%;width:100%;object-fit:cover;transition:transform .35s}.card:hover .card-image img{transform:scale(1.04)}.card-body{padding:25px}.card-body p{font-size:.93rem}.text-link{display:inline-flex;align-items:center;gap:8px;color:var(--green);font-weight:700;font-size:.88rem;margin-top:5px}.text-link:hover{gap:12px}.number-tag{display:inline-grid;place-items:center;width:42px;height:42px;border-radius:50%;background:#e8efe9;color:var(--green);font-weight:800;margin-bottom:18px}.founder-panel{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:32px;box-shadow:var(--shadow)}.founder-panel .eyebrow{margin-bottom:18px}.mini-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:26px}.mini-stat{border-left:2px solid var(--gold);padding-left:12px}.mini-stat strong{display:block;color:var(--green);font:800 1.15rem Manrope,sans-serif}.mini-stat span{font-size:.75rem;color:var(--muted)}.process{display:grid;grid-template-columns:repeat(5,1fr);gap:0;position:relative}.process:before{content:"";position:absolute;top:26px;left:9%;right:9%;height:1px;background:#c8d5cc}.process-step{position:relative;padding:0 15px;text-align:center}.process-num{position:relative;z-index:1;width:54px;height:54px;margin:0 auto 20px;border-radius:50%;display:grid;place-items:center;background:var(--green);color:#fff;border:5px solid var(--soft);font-weight:800}.process-step h3{font-size:1rem}.process-step p{font-size:.85rem}.mineral-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.mineral-card{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff}.mineral-card img{width:100%;height:170px;object-fit:cover;background:#e7ebe6}.mineral-card .mineral-info{padding:18px}.mineral-info h3{margin-bottom:8px}.mineral-info p{font-size:.84rem;margin-bottom:12px}.availability{display:inline-block;font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;color:#53675a;background:#edf3ee;border-radius:4px;padding:4px 7px;font-weight:700}.principles{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}.principle{border-top:2px solid var(--gold);padding-top:22px}.principle .symbol{font-size:1.6rem;color:var(--gold);margin-bottom:18px}.principle h3{color:#fff}.principle p{font-size:.9rem}.dashboard{background:#fff;border:1px solid #dce4dd;border-radius:16px;box-shadow:0 24px 65px rgba(0,0,0,.14);overflow:hidden;color:var(--ink)}.dash-top{display:flex;align-items:center;justify-content:space-between;padding:17px 20px;border-bottom:1px solid var(--line);font-weight:800;font-size:.85rem}.demo-pill{font-size:.68rem;background:#fff3d8;color:#7c5b1a;border-radius:30px;padding:5px 9px;text-transform:uppercase;letter-spacing:.06em}.dash-layout{display:grid;grid-template-columns:130px 1fr;min-height:320px}.dash-side{background:#f4f7f4;padding:20px 12px;border-right:1px solid var(--line)}.dash-side div{font-size:.72rem;color:#657168;padding:9px 8px;border-radius:6px;margin-bottom:5px}.dash-side div.active{background:#e1ebe3;color:var(--green);font-weight:700}.dash-main{padding:22px}.dash-main h3{font-size:1.05rem}.dash-metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.metric{padding:12px;border:1px solid var(--line);border-radius:9px}.metric small{display:block;color:var(--muted);font-size:.65rem}.metric strong{display:block;font:800 1rem Manrope,sans-serif;margin-top:7px}.dash-table{width:100%;border-collapse:collapse;margin-top:18px;font-size:.72rem}.dash-table th,.dash-table td{text-align:left;padding:10px 7px;border-bottom:1px solid var(--line)}.dash-table th{color:var(--muted);font-weight:600}.status{color:#8a6723;background:#fff3d8;border-radius:4px;padding:4px 6px;font-size:.63rem}.callout{display:flex;justify-content:space-between;align-items:center;gap:30px;padding:36px;border:1px solid rgba(255,255,255,.17);border-radius:var(--radius);background:rgba(255,255,255,.04)}.callout h2{font-size:clamp(1.8rem,3vw,2.6rem);margin-bottom:12px}.callout p{max-width:700px;margin:0}.contact-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px}.contact-item{display:flex;gap:14px;align-items:flex-start;margin:22px 0}.contact-icon{flex:0 0 42px;height:42px;display:grid;place-items:center;border-radius:10px;background:#eaf1eb;color:var(--green);font-weight:800}.contact-item strong{display:block;margin-bottom:3px}.contact-item p{margin:0;font-size:.9rem}.contact-form{display:grid;grid-template-columns:1fr 1fr;gap:15px}.field{display:flex;flex-direction:column;gap:7px}.field.full{grid-column:1/-1}.field label{font-size:.82rem;font-weight:700}.field input,.field select,.field textarea{width:100%;border:1px solid #d8e0d9;border-radius:8px;padding:12px 13px;color:var(--ink);background:#fff;outline:none}.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--green);box-shadow:0 0 0 3px rgba(23,77,53,.1)}.field textarea{min-height:125px;resize:vertical}.form-note{font-size:.76rem;margin:10px 0 0}.footer{background:#0b2b1f;color:#fff;padding:54px 0 22px}.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:36px;padding-bottom:36px}.footer .brand-name small{color:#a8b8ad}.footer p{color:#bdc9c0;font-size:.88rem;max-width:300px;margin-top:18px}.footer h4{font-size:.9rem;letter-spacing:0;margin-bottom:17px}.footer-links{display:grid;gap:10px}.footer-links a,.footer-links span{font-size:.82rem;color:#c5d1c8}.footer-links a:hover{color:#e2c987}.footer-bottom{border-top:1px solid rgba(255,255,255,.13);padding-top:18px;display:flex;justify-content:space-between;gap:20px;font-size:.75rem;color:#aab9af}.footer-bottom p{font-size:.75rem;margin:0}.whatsapp{position:fixed;right:20px;bottom:20px;z-index:90;width:58px;height:58px;border-radius:50%;background:#1f8b50;color:white;display:grid;place-items:center;box-shadow:0 8px 25px rgba(0,0,0,.2);font-size:1.55rem;border:3px solid white}.whatsapp:hover{transform:translateY(-3px)}.disclaimer{font-size:.78rem;color:var(--muted);background:#f8f9f7;padding:13px 15px;border-left:3px solid var(--gold);border-radius:4px}.hidden-label{position:absolute;left:-9999px}.fade-up{animation:fade .65s ease both}@keyframes fade{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
-@media(max-width:1050px){.nav-links{gap:12px}.nav-links a{font-size:.76rem}.nav-cta{padding:11px 13px}.intro-grid,.founder-grid,.digital-grid,.contact-grid{gap:35px}.footer-grid{grid-template-columns:1.3fr 1fr 1fr}.footer-grid>div:last-child{grid-column:2/4}}
-@media(max-width:820px){.section{padding:72px 0}.nav{height:70px}.menu-toggle{display:block}.nav-cta{display:none}.nav-links{display:none;position:absolute;left:0;right:0;top:70px;background:#fff;border-bottom:1px solid var(--line);padding:18px 22px 24px;box-shadow:0 18px 25px rgba(0,0,0,.06);align-items:stretch;gap:0;flex-direction:column}.nav-links.open{display:flex}.nav-links a{padding:12px 0;font-size:.92rem;border-bottom:1px solid #eef1ed}.nav-links a:last-child{border:0}.hero{min-height:590px}.hero-bg{background-position:60% center}.intro-grid,.founder-grid,.digital-grid,.contact-grid{grid-template-columns:1fr}.intro-grid .image-frame{order:-1}.cards{grid-template-columns:1fr 1fr}.process{grid-template-columns:1fr;gap:14px}.process:before{top:25px;bottom:25px;left:26px;right:auto;width:1px;height:auto}.process-step{display:grid;grid-template-columns:54px 1fr;text-align:left;gap:0 18px;padding:0}.process-num{grid-row:span 2;margin:0}.process-step h3{align-self:end;margin:5px 0}.process-step p{margin-bottom:8px}.mineral-grid{grid-template-columns:repeat(2,1fr)}.principles{grid-template-columns:1fr 1fr}.callout{align-items:flex-start;flex-direction:column}.footer-grid{grid-template-columns:1fr 1fr}.footer-grid>div:last-child{grid-column:auto}}
-@media(max-width:540px){.container{width:min(100% - 30px,1160px)}.section{padding:60px 0}.hero{min-height:620px}.hero-content{padding:70px 0}.hero-bg{background-position:58% center;background-image:linear-gradient(90deg,rgba(9,38,27,.95),rgba(9,38,27,.72)),url('https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1200&q=75')}.hero h1{font-size:2.65rem}.hero p{font-size:.98rem}.btn-row .btn{width:100%}.cards,.mineral-grid,.principles{grid-template-columns:1fr}.card-image{height:220px}.image-frame,.image-frame img{min-height:280px}.founder-panel{padding:23px}.mini-stats{grid-template-columns:1fr}.mini-stat{padding:8px 0 8px 12px}.dash-layout{grid-template-columns:1fr}.dash-side{display:none}.dash-main{padding:14px}.dash-metrics{grid-template-columns:1fr 1fr}.dash-metrics .metric:last-child{display:none}.dash-table{font-size:.63rem}.dash-table th,.dash-table td{padding:8px 4px}.contact-form{grid-template-columns:1fr}.field.full{grid-column:auto}.footer-grid{grid-template-columns:1fr;gap:28px}.footer-grid>div:last-child{grid-column:auto}.footer-bottom{flex-direction:column}.whatsapp{width:52px;height:52px;right:14px;bottom:14px}.callout{padding:25px}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lexy Mineral Technologies | Integrated Mineral Commerce & Technology</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --forest-green: #174D35;
+            --deep-forest: #103B2B;
+            --mineral-white: #FFFFFF;
+            --soft-white: #F5F7F4;
+            --charcoal: #242A27;
+            --subtle-gold: #C6A15B;
+            --muted-grey: #69736D;
+            --border-color: #E2E8E4;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-family: 'Inter', sans-serif;
+            color: var(--charcoal);
+            background-color: var(--mineral-white);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Manrope', sans-serif;
+            color: var(--charcoal);
+            font-weight: 700;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .section-padding {
+            padding: 5rem 0;
+        }
+
+        .bg-soft-white {
+            background-color: var(--soft-white);
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .max-w-800 {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* BUTTONS */
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.75rem;
+            font-family: 'Manrope', sans-serif;
+            font-weight: 600;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background-color: var(--forest-green);
+            color: var(--mineral-white);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--deep-forest);
+        }
+
+        .btn-secondary {
+            background-color: var(--subtle-gold);
+            color: var(--charcoal);
+        }
+
+        .btn-secondary:hover {
+            opacity: 0.9;
+        }
+
+        .btn-primary-outline {
+            border: 2px solid var(--forest-green);
+            color: var(--forest-green);
+            background: transparent;
+        }
+
+        .btn-primary-outline:hover {
+            background-color: var(--forest-green);
+            color: var(--mineral-white);
+        }
+
+        .btn-sm {
+            padding: 0.4rem 1rem;
+            font-size: 0.85rem;
+        }
+
+        /* HEADER & NAVIGATION */
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: var(--mineral-white);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 80px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .logo-brand {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .logo-box {
+            width: 38px;
+            height: 38px;
+            background-color: var(--forest-green);
+            transform: rotate(45deg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-box.sm {
+            width: 28px;
+            height: 28px;
+        }
+
+        .logo-letter {
+            transform: rotate(-45deg);
+            color: var(--mineral-white);
+            font-family: 'Manrope', sans-serif;
+            font-weight: 800;
+            font-size: 1.15rem;
+        }
+
+        .brand-name {
+            font-family: 'Manrope', sans-serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--charcoal);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--charcoal);
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--forest-green);
+        }
+
+        .nav-cta {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--charcoal);
+        }
+
+        /* HERO SECTION */
+        .hero-section {
+            position: relative;
+            height: 90vh;
+            min-height: 600px;
+            background: linear-gradient(rgba(16, 59, 43, 0.85), rgba(23, 77, 53, 0.8)), url('https://images.unsplash.com/photo-1578328819058-b69f3a3b0f6b?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            text-align: left;
+            color: var(--mineral-white);
+            margin-top: 80px;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            color: var(--mineral-white);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero-content p {
+            font-size: 1.15rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .section-tag {
+            display: inline-block;
+            font-family: 'Manrope', sans-serif;
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--forest-green);
+            margin-bottom: 0.5rem;
+        }
+
+        /* GRIDS */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .image-wrapper img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        /* CARDS */
+        .card {
+            background: var(--mineral-white);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card-body {
+            padding: 1.5rem;
+        }
+
+        .card-body h3 {
+            margin-bottom: 0.75rem;
+            font-size: 1.25rem;
+        }
+
+        .card-body p {
+            color: var(--muted-grey);
+            font-size: 0.95rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .card-link {
+            font-weight: 600;
+            color: var(--forest-green);
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* PROCESS GRID */
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .process-step {
+            background: var(--mineral-white);
+            border: 1px solid var(--border-color);
+            padding: 2rem 1.5rem;
+            border-radius: 6px;
+            position: relative;
+        }
+
+        .step-num {
+            font-family: 'Manrope', sans-serif;
+            font-size: 1.75rem;
+            font-weight: 800;
+            color: var(--subtle-gold);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .process-step h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .process-step p {
+            font-size: 0.9rem;
+            color: var(--muted-grey);
+        }
+
+        /* MINERAL CARDS */
+        .mineral-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .mineral-card {
+            background: var(--mineral-white);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .mineral-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .mineral-info {
+            padding: 1.25rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .mineral-info h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .mineral-info p {
+            font-size: 0.9rem;
+            color: var(--muted-grey);
+            margin-bottom: 1.25rem;
+            flex-grow: 1;
+        }
+
+        /* FEATURE BOX */
+        .feature-box {
+            background: var(--mineral-white);
+            border: 1px solid var(--border-color);
+            padding: 2rem;
+            border-radius: 6px;
+        }
+
+        .icon-circle {
+            width: 50px;
+            height: 50px;
+            background: var(--soft-white);
+            color: var(--forest-green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .feature-box h3 {
+            font-size: 1.15rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .feature-box p {
+            font-size: 0.9rem;
+            color: var(--muted-grey);
+        }
+
+        /* DASHBOARD PREVIEW */
+        .dashboard-preview {
+            background: var(--charcoal);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+
+        .dashboard-header {
+            background: #1a1f1d;
+            padding: 0.75rem 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+
+        .dot.red { background: #ff5f56; }
+        .dot.yellow { background: #ffbd2e; }
+        .dot.green { background: #27c93f; }
+
+        .dash-title {
+            color: #a0aec0;
+            font-size: 0.85rem;
+            margin-left: 0.5rem;
+        }
+
+        .dashboard-body {
+            padding: 2rem;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .dash-card {
+            background: rgba(255,255,255,0.05);
+            padding: 1.25rem;
+            border-radius: 6px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .dash-card span {
+            display: block;
+            color: #a0aec0;
+            font-size: 0.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .dash-card strong {
+            color: var(--mineral-white);
+            font-size: 1.1rem;
+        }
+
+        .check-list {
+            margin: 1.5rem 0;
+        }
+
+        .check-list li {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+            font-size: 0.95rem;
+        }
+
+        .check-list i {
+            color: var(--forest-green);
+        }
+
+        .note-text {
+            font-size: 0.85rem;
+            color: var(--muted-grey);
+        }
+
+        /* CONTACT SECTION */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .contact-info-card {
+            background: var(--forest-green);
+            color: var(--mineral-white);
+            padding: 2.5rem;
+            border-radius: 8px;
+        }
+
+        .contact-info-card h3 {
+            color: var(--mineral-white);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .contact-info-card > p {
+            opacity: 0.9;
+            margin-bottom: 2rem;
+            font-size: 0.95rem;
+        }
+
+        .contact-method {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-method i {
+            font-size: 1.25rem;
+            color: var(--subtle-gold);
+            margin-top: 0.2rem;
+        }
+
+        .contact-method span {
+            display: block;
+            font-size: 0.8rem;
+            opacity: 0.8;
+        }
+
+        .contact-method a {
+            font-weight: 600;
+            font-size: 1.05rem;
+        }
+
+        .contact-form {
+            background: var(--mineral-white);
+            padding: 2.5rem;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+        }
+
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            font-family: inherit;
+            font-size: 0.95rem;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--forest-green);
+        }
+
+        .form-alert {
+            margin-top: 1rem;
+            padding: 0.75rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+
+        .form-alert.success {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        /* FOOTER */
+        .site-footer {
+            background: var(--deep-forest);
+            color: var(--mineral-white);
+            padding: 4rem 0 2rem 0;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-brand {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-brand span {
+            font-family: 'Manrope', sans-serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .site-footer p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-bottom: 0.5rem;
+        }
+
+        .site-footer h4 {
+            color: var(--mineral-white);
+            font-size: 1rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-links a {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            transition: opacity 0.2s;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 2rem;
+            font-size: 0.85rem;
+            opacity: 0.7;
+        }
+
+        /* RESPONSIVE DESIGN */
+        @media(max-width: 1024px) {
+            .process-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .mineral-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .grid-4 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media(max-width: 768px) {
+            .nav-links, .nav-cta .btn-primary-outline {
+                display: none;
+            }
+            .mobile-menu-btn {
+                display: block;
+            }
+            .nav-links.active {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background: var(--mineral-white);
+                padding: 1.5rem;
+                border-bottom: 1px solid var(--border-color);
+                box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            }
+            .grid-2, .grid-3, .mineral-grid, .grid-4, .process-grid, .contact-grid, .dashboard-body {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .hero-content h1 {
+                font-size: 2.25rem;
+            }
+            .hero-buttons {
+                flex-direction: column;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-<header class="nav-wrap">
-  <nav class="nav container" aria-label="Main navigation">
-    <a class="brand" href="#home" aria-label="Lexy Mineral Technologies home"><span class="logo" aria-hidden="true"><span>L</span></span><span class="brand-name">LEXY MINERAL<small>TECHNOLOGIES</small></span></a>
-    <button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="navLinks">☰</button>
-    <div class="nav-links" id="navLinks">
-      <a href="#home">Home</a><a href="#about">About Us</a><a href="#solutions">Solutions</a><a href="#minerals">Minerals</a><a href="#platform">Digital Platform</a><a href="#approach">Our Approach</a><a href="#investors">Investors</a><a href="#contact">Contact</a>
-    </div>
-    <a class="btn primary nav-cta" href="#contact">Partner With Lexy <span aria-hidden="true">↗</span></a>
-  </nav>
-</header>
 
-<main>
-<section class="hero" id="home">
-  <div class="hero-bg" role="img" aria-label="Mineral-rich rock formations representing the mineral sector"></div>
-  <div class="container hero-content fade-up">
-    <span class="eyebrow">Mineral commerce · Nigeria</span>
-    <h1>Building Better Infrastructure for the <span>Mineral Value Chain.</span></h1>
-    <p>Lexy Mineral Technologies is developing an integrated mineral business focused on sourcing, processing access, quality assessment, aggregation, and commercial trading. Built on practical industry experience, our vision is to make mineral operations more organized, informed, and reliable through operational expertise and technology.</p>
-    <div class="btn-row"><a class="btn gold" href="#solutions">Explore Our Solutions <span aria-hidden="true">→</span></a><a class="btn outline" href="#contact">Partner With Lexy</a></div>
-    <div class="hero-note"><i></i> An early-stage business building its capabilities progressively.</div>
-  </div>
-</section>
+    <!-- NAVIGATION -->
+    <header class="site-header">
+        <div class="nav-container">
+            <a href="#home" class="logo-brand">
+                <div class="logo-box">
+                    <span class="logo-letter">L</span>
+                </div>
+                <span class="brand-name">Lexy Mineral Technologies</span>
+            </a>
+            
+            <nav class="nav-links" id="navLinks">
+                <a href="#home">Home</a>
+                <a href="#about">About Us</a>
+                <a href="#solutions">Solutions</a>
+                <a href="#minerals">Minerals</a>
+                <a href="#platform">Digital Platform</a>
+                <a href="#approach">Our Approach</a>
+                <a href="#investors">Investors</a>
+                <a href="#contact">Contact</a>
+            </nav>
 
-<section class="section" id="about">
-  <div class="container intro-grid">
-    <div>
-      <span class="eyebrow">Who we are</span>
-      <h2>A More Organized Approach to Mineral Commerce</h2>
-      <p>Mineral commerce depends on reliable sourcing, appropriate material assessment, processing, logistics, and trusted commercial relationships. Lexy Mineral Technologies is being developed to bring these activities into a more organized operating model.</p>
-      <p>By combining mineral purchasing, processing access, sampling and testing, aggregation, and trading, the company aims to improve how suitable mineral materials are evaluated, prepared, and brought to market.</p>
-      <ul class="check-list"><li>Direct participation in mineral purchasing and trading</li><li>Material assessment to support informed commercial decisions</li><li>Progressive development of operational and digital capabilities</li></ul>
-      <a class="text-link" href="#founder">Discover the experience behind Lexy <span>→</span></a>
-    </div>
-    <div class="image-frame"><img loading="lazy" src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1100&q=80" alt="Rock and mineral textures in a natural geological setting"><div class="image-caption">Practical experience. Organized operations. Long-term vision.</div></div>
-  </div>
-</section>
-
-<section class="section soft" id="solutions">
-  <div class="container">
-    <div class="section-head"><span class="eyebrow">Our solutions</span><h2>What We Do</h2><p>Connected activities designed to support the movement of mineral materials from sourcing and assessment to processing and commercial supply.</p></div>
-    <div class="cards">
-      <article class="card"><div class="card-image"><img loading="lazy" src="https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=900&q=80" alt="Industrial equipment representing mineral processing operations"></div><div class="card-body"><h3>Mineral Processing</h3><p>Processing and concentration arrangements intended to prepare suitable mineral materials for further commercial use, depending on material characteristics and available facilities.</p><a class="text-link" href="#contact" data-enquiry="Processing services">Enquire about processing →</a></div></article>
-      <article class="card"><div class="card-image"><img loading="lazy" src="https://images.unsplash.com/photo-1516937941344-00b4e0337589?auto=format&fit=crop&w=900&q=80" alt="Industrial materials being handled in a logistics environment"></div><div class="card-body"><h3>Mineral Aggregation &amp; Trading</h3><p>Sourcing, purchasing, aggregation, and commercial trading based on material quality, supplier relationships, logistics, and buyer requirements.</p><a class="text-link" href="#contact" data-enquiry="Mineral supply or purchasing">Discuss mineral supply →</a></div></article>
-      <article class="card"><div class="card-image"><img loading="lazy" src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=900&q=80" alt="Samples and instruments in a technical testing environment"></div><div class="card-body"><h3>Sampling, Testing &amp; Verification</h3><p>Sampling and quality assessment intended to support informed purchasing, processing, and commercial decisions, with external laboratory testing where appropriate.</p><a class="text-link" href="#contact" data-enquiry="Sampling and testing">Ask about assessment →</a></div></article>
-    </div>
-    <p class="disclaimer" style="margin-top:24px">Processing access and testing arrangements depend on material requirements and provider availability. Lexy does not claim ownership of a processing plant or accredited laboratory.</p>
-  </div>
-</section>
-
-<section class="section" id="founder">
-  <div class="container founder-grid">
-    <div class="image-frame"><img loading="lazy" src="https://images.unsplash.com/photo-1516937941344-00b4e0337589?auto=format&fit=crop&w=1000&q=80" alt="Industrial materials and handling environment representing mineral supply-chain operations"><div class="image-caption">Founder experience informing the business model</div></div>
-    <div>
-      <span class="eyebrow">Experience behind the vision</span><h2>Built on Practical Mineral Industry Experience</h2>
-      <p>The founder's experience in the mineral industry began in 2023 and developed through practical involvement in mineral purchasing, work with existing processing mills, material assessment and grade checking, manual washing and concentration, logistics, and operational recordkeeping.</p>
-      <p>Exposure across Plateau, Zamfara, Kaduna, Maiduguri and surrounding areas, and Bauchi has helped inform an understanding of the practical challenges involved in sourcing, evaluating, processing, and transporting mineral materials.</p>
-      <p>This is the founder's practical background—not a claim that Lexy has operated as a registered company since 2023. Lexy aims to build on this experience through organized operations, appropriate quality assessment, and technology-enabled systems.</p>
-      <div class="founder-panel"><span class="eyebrow">What informs our approach</span><h3>Real operating challenges, practical learning, and a plan to build progressively.</h3><p style="margin-bottom:0">The company's direction reflects experience across several stages of the mineral supply chain, while remaining transparent about the capabilities still being developed.</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="section soft" id="operating-model">
-  <div class="container">
-    <div class="section-head center"><span class="eyebrow">Our operating model</span><h2>From Mineral Sourcing to Commercial Supply</h2><p>Our intended process connects material assessment with purchasing, suitable processing, organized supply, and trading.</p></div>
-    <div class="process">
-      <div class="process-step"><div class="process-num">01</div><h3>Source</h3><p>Identify suppliers and suitable material opportunities.</p></div>
-      <div class="process-step"><div class="process-num">02</div><h3>Assess</h3><p>Inspect materials and arrange appropriate sampling or testing.</p></div>
-      <div class="process-step"><div class="process-num">03</div><h3>Process</h3><p>Arrange suitable processing where required and available.</p></div>
-      <div class="process-step"><div class="process-num">04</div><h3>Aggregate</h3><p>Purchase and organize materials that meet commercial requirements.</p></div>
-      <div class="process-step"><div class="process-num">05</div><h3>Trade</h3><p>Supply suitable mineral products to commercial buyers.</p></div>
-    </div>
-    <p class="disclaimer" style="margin-top:28px">This illustrates the intended operating model. It does not mean every stage is currently available in-house or performed for every material.</p>
-  </div>
-</section>
-
-<section class="section" id="minerals">
-  <div class="container">
-    <div class="section-head"><span class="eyebrow">Commercial focus</span><h2>Minerals Within Our Commercial Focus</h2><p>Lexy is interested in the following mineral categories, subject to sourcing opportunities, material quality, market conditions, and applicable requirements. Availability is not guaranteed.</p></div>
-    <div class="mineral-grid">
-      <article class="mineral-card"><img loading="lazy" src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=700&q=75" alt="Geological rock material; replace with verified iron ore photograph"><div class="mineral-info"><h3>Iron Ore</h3><p>Iron-bearing material for assessment and potential commercial supply.</p><span class="availability">Subject to sourcing</span></div></article>
-      <article class="mineral-card"><img loading="lazy" src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=700&q=75" alt="Natural mineral material placeholder; replace with verified tantalite specimen"><div class="mineral-info"><h3>Tantalite</h3><p>Tantalum-bearing mineral material requiring appropriate identification and assessment.</p><span class="availability">Subject to sourcing</span></div></article>
-      <article class="mineral-card"><img loading="lazy" src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=700&q=75" alt="Natural terrain placeholder; replace with verified columbite specimen"><div class="mineral-info"><h3>Columbite</h3><p>Niobium-bearing material for potential evaluation and commercial transactions.</p><span class="availability">Subject to sourcing</span></div></article>
-      <article class="mineral-card"><img loading="lazy" src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=700&q=75" alt="Rocky landscape placeholder; replace with verified monazite specimen"><div class="mineral-info"><h3>Monazite</h3><p>A phosphate mineral of interest where sourcing, composition, and handling requirements are suitable.</p><span class="availability">Subject to sourcing</span></div></article>
-      <article class="mineral-card"><img loading="lazy" src="https://images.unsplash.com/photo-1509316785289-025f5b846b35?auto=format&fit=crop&w=700&q=75" alt="Sand texture placeholder; replace with verified zircon sand or specimen"><div class="mineral-info"><h3>Zircon</h3><p>Zircon-bearing material assessed according to quality information and commercial specifications.</p><span class="availability">Subject to sourcing</span></div></article>
-      <article class="mineral-card"><img loading="lazy" src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=700&q=75" alt="Natural landscape placeholder; replace with verified cassiterite or tin concentrate photograph"><div class="mineral-info"><h3>Tin-Bearing Materials</h3><p>Materials such as cassiterite or suitable tin concentrates, subject to assessment.</p><span class="availability">Subject to sourcing</span></div></article>
-      <article class="mineral-card"><img loading="lazy" src="https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=700&q=75" alt="Natural environment placeholder; replace with verified rutile specimen or concentrate"><div class="mineral-info"><h3>Rutile</h3><p>Titanium-bearing mineral material for potential assessment and commercial supply.</p><span class="availability">Subject to sourcing</span></div></article>
-      <article class="mineral-card"><img loading="lazy" src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=700&q=75" alt="Rock formation placeholder; replace with accurate silicon-bearing mineral photograph"><div class="mineral-info"><h3>Silicon-Bearing Materials</h3><p>Mineral materials containing silica or other silicon-bearing components; not a claim of processed silicon production.</p><span class="availability">Subject to sourcing</span></div></article>
-      <article class="mineral-card"><img loading="lazy" src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=700&q=75&sat=-35" alt="Rock texture placeholder; replace with verified azurite or other copper-bearing mineral specimen"><div class="mineral-info"><h3>Copper-Bearing Materials</h3><p>Selected copper-bearing materials, including azurite where commercially appropriate.</p><span class="availability">Subject to sourcing</span></div></article>
-    </div>
-    <p class="disclaimer" style="margin-top:22px"><strong>Image review required before publication:</strong> The mineral-card images are temporary visual placeholders, not verified specimen photographs. Replace each with a correctly identified, legally usable image of the named mineral before presenting this section as final. No mineral is represented as continuously available.</p>
-    <div class="btn-row"><a class="btn primary" href="#contact" data-enquiry="Mineral supply">Make a Mineral Enquiry</a></div>
-  </div>
-</section>
-
-<section class="section dark" id="approach">
-  <div class="container">
-    <div class="section-head"><span class="eyebrow">Our approach</span><h2>Built Around the Realities of Mineral Commerce</h2><p>We intend to develop a business model grounded in material information, commercial discipline, supplier relationships, and organized records.</p></div>
-    <div class="principles">
-      <article class="principle"><div class="symbol">↗</div><h3>Direct Commercial Participation</h3><p>Lexy aims to purchase, aggregate, and trade suitable materials rather than operate primarily as an open marketplace.</p></article>
-      <article class="principle"><div class="symbol">◇</div><h3>Quality Awareness</h3><p>Appropriate material assessment and testing information help inform purchasing and processing decisions.</p></article>
-      <article class="principle"><div class="symbol">▤</div><h3>Organized Operations</h3><p>We aim to improve material identification, records, coordination, and documentation as capabilities develop.</p></article>
-      <article class="principle"><div class="symbol">⌘</div><h3>Technology-Enabled Growth</h3><p>Planned digital tools are intended to support mineral records, service activities, and commercial information.</p></article>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="platform">
-  <div class="container digital-grid">
-    <div>
-      <span class="eyebrow">Digital platform vision</span><h2>Technology for a More Organized Mineral Value Chain</h2>
-      <p>Lexy aims to develop digital tools that help organize mineral records, quality information, processing activities, supplier information, and commercial operations.</p>
-      <p>The long-term objective is to improve operational visibility and documentation while supporting Lexy's direct role in mineral purchasing, aggregation, and trading.</p>
-      <ul class="check-list"><li>Mineral and batch records</li><li>Sampling and testing documentation</li><li>Processing and service status records</li><li>Supplier information and commercial history</li><li>Inventory and transaction records</li></ul>
-      <p class="disclaimer">The interface shown is a visual concept only. It is not a live application, does not contain real inventory, and does not provide login access.</p>
-      <a class="text-link" href="#contact">Discuss the platform vision →</a>
-    </div>
-    <div class="dashboard" aria-label="Demonstration concept of a future mineral operations dashboard">
-      <div class="dash-top"><span>Lexy Operations <span style="color:var(--muted);font-weight:500">/ Overview</span></span><span class="demo-pill">Concept preview</span></div>
-      <div class="dash-layout"><aside class="dash-side"><div class="active">Overview</div><div>Mineral records</div><div>Quality reports</div><div>Processing</div><div>Suppliers</div><div>Transactions</div></aside>
-        <div class="dash-main"><h3>Operations overview</h3><p style="font-size:.76rem;margin-bottom:16px">Illustrative interface · sample data only</p><div class="dash-metrics"><div class="metric"><small>Material batches</small><strong>Sample</strong></div><div class="metric"><small>Quality reports</small><strong>Planned</strong></div><div class="metric"><small>Processing status</small><strong>Planned</strong></div></div>
-          <table class="dash-table"><thead><tr><th>Reference</th><th>Material</th><th>Record status</th></tr></thead><tbody><tr><td>DEMO-001</td><td>Iron ore</td><td><span class="status">Illustrative</span></td></tr><tr><td>DEMO-002</td><td>Tin-bearing</td><td><span class="status">Illustrative</span></td></tr><tr><td>DEMO-003</td><td>Zircon</td><td><span class="status">Illustrative</span></td></tr></tbody></table>
+            <div class="nav-cta">
+                <a href="#contact" class="btn btn-primary-outline">Partner With Lexy</a>
+                <button class="mobile-menu-btn" id="menuBtn" aria-label="Toggle navigation">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
+    </header>
 
-<section class="section soft" id="investors">
-  <div class="container">
-    <div class="callout"><div><span class="eyebrow" style="color:#e2c987">Investors &amp; partners</span><h2>Building for Long-Term Growth</h2><p>Lexy Mineral Technologies is developing an integrated mineral business that combines practical industry experience with mineral sourcing, processing access, quality assessment, aggregation, and commercial trading. We welcome conversations with investors, suppliers, processing partners, and organizations interested in mineral commerce and technology infrastructure.</p></div><a class="btn gold" href="#contact" data-enquiry="Investment or strategic partnership">Discuss a Partnership <span>↗</span></a></div>
-  </div>
-</section>
+    <!-- MAIN CONTENT -->
+    <main>
 
-<section class="section" id="contact">
-  <div class="container">
-    <div class="section-head"><span class="eyebrow">Get in touch</span><h2>Let's Build Better Mineral Operations</h2><p>Contact Lexy about mineral supply, purchasing opportunities, processing enquiries, sampling and testing, or potential partnerships.</p></div>
-    <div class="contact-grid">
-      <div class="contact-card"><h3>Contact Lexy Mineral Technologies</h3><p>Share a little about your enquiry and we will be better placed to understand how to proceed.</p>
-        <div class="contact-item"><div class="contact-icon">✉</div><div><strong>Email</strong><p><a href="mailto:lexymineraltechnologies@gmail.com">lexymineraltechnologies@gmail.com</a></p></div></div>
-        <div class="contact-item"><div class="contact-icon">WA</div><div><strong>WhatsApp</strong><p><a href="https://wa.me/2348145711445" target="_blank" rel="noopener noreferrer">+234 814 571 1445</a></p></div></div>
-        <div class="contact-item"><div class="contact-icon">↗</div><div><strong>Enquiries welcomed</strong><p>Mineral suppliers, commercial buyers, processing partners, investors, and other stakeholders.</p></div></div>
-        <a class="btn primary" href="https://wa.me/2348145711445?text=Hello%20Lexy%20Mineral%20Technologies%2C%20I%20would%20like%20to%20make%20an%20enquiry." target="_blank" rel="noopener noreferrer">Start a WhatsApp Conversation</a>
-      </div>
-      <div class="contact-card"><h3>Send an enquiry</h3><p style="font-size:.86rem">This form prepares an email to Lexy in your email application. Your message is not sent until you review and send that email.</p>
-        <form id="contactForm" class="contact-form">
-          <div class="field"><label for="name">Full name *</label><input id="name" name="name" required autocomplete="name" placeholder="Your full name"></div>
-          <div class="field"><label for="company">Company / organization</label><input id="company" name="company" autocomplete="organization" placeholder="Optional"></div>
-          <div class="field"><label for="email">Email address *</label><input id="email" name="email" type="email" required autocomplete="email" placeholder="you@example.com"></div>
-          <div class="field"><label for="phone">Phone number</label><input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="Optional"></div>
-          <div class="field full"><label for="type">Enquiry type *</label><select id="type" name="type" required><option value="">Select an enquiry type</option><option>Mineral supply</option><option>Mineral purchasing</option><option>Processing services</option><option>Sampling and testing</option><option>Business partnership</option><option>Investment enquiry</option><option>General enquiry</option></select></div>
-          <div class="field full"><label for="message">Message *</label><textarea id="message" name="message" required placeholder="Tell us about your material, service requirement, or partnership enquiry."></textarea></div>
-          <div class="field full"><button class="btn primary" type="submit">Prepare Email Enquiry →</button><p id="formStatus" class="form-note" role="status" aria-live="polite">Required fields are marked with an asterisk.</p></div>
-        </form>
-      </div>
-    </div>
-  </div>
-</section>
-</main>
+        <!-- HERO SECTION -->
+        <section id="home" class="hero-section">
+            <div class="hero-content container">
+                <h1>Building Better Infrastructure for the Mineral Value Chain.</h1>
+                <p>Lexy Mineral Technologies is developing an integrated mineral business focused on sourcing, processing, quality assessment, aggregation, and commercial trading. Built on practical industry experience, our vision is to make mineral operations more organized, informed, and reliable through operational expertise and technology.</p>
+                <div class="hero-buttons">
+                    <a href="#solutions" class="btn btn-primary">Explore Our Solutions</a>
+                    <a href="#contact" class="btn btn-secondary">Partner With Lexy</a>
+                </div>
+            </div>
+        </section>
 
-<footer class="footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div><a class="brand" href="#home"><span class="logo" style="color:#fff"><span>L</span></span><span class="brand-name">LEXY MINERAL<small>TECHNOLOGIES</small></span></a><p>Mineral sourcing, processing, quality assessment, aggregation, and technology-enabled mineral commerce.</p></div>
-      <div><h4>Explore</h4><div class="footer-links"><a href="#home">Home</a><a href="#about">About Us</a><a href="#solutions">Solutions</a><a href="#minerals">Minerals</a></div></div>
-      <div><h4>Our Direction</h4><div class="footer-links"><a href="#platform">Digital Platform</a><a href="#approach">Our Approach</a><a href="#investors">Investors</a><a href="#contact">Contact</a></div></div>
-      <div><h4>Contact</h4><div class="footer-links"><a href="mailto:lexymineraltechnologies@gmail.com">lexymineraltechnologies@gmail.com</a><a href="https://wa.me/2348145711445" target="_blank" rel="noopener noreferrer">WhatsApp: +234 814 571 1445</a></div></div>
-    </div>
-    <div class="footer-bottom"><p>© 2026 Lexy Mineral Technologies. All rights reserved.</p><p>Early-stage business · Capabilities under development</p></div>
-  </div>
-</footer>
-<a class="whatsapp" href="https://wa.me/2348145711445?text=Hello%20Lexy%20Mineral%20Technologies" target="_blank" rel="noopener noreferrer" aria-label="Contact Lexy Mineral Technologies on WhatsApp">✆</a>
+        <!-- COMPANY INTRODUCTION -->
+        <section class="section-padding bg-soft-white">
+            <div class="container grid-2">
+                <div>
+                    <span class="section-tag">About Our Model</span>
+                    <h2>A More Organized Approach to Mineral Commerce</h2>
+                    <p>Mineral commerce depends on reliable sourcing, appropriate material assessment, processing, logistics, and trusted commercial relationships.</p>
+                    <p>Lexy Mineral Technologies is developing a business that brings these activities into a more organized operating model.</p>
+                    <p>By combining mineral purchasing, processing access, sampling and testing, aggregation, and trading, the company aims to improve how mineral materials are evaluated, prepared, and brought to market.</p>
+                    <p>Our long-term vision includes digital tools for maintaining mineral records, documenting quality information, and improving operational visibility as the business develops.</p>
+                </div>
+                <div class="image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1578328819058-b69f3a3b0f6b?auto=format&fit=crop&w=800&q=80" alt="Raw mineral materials and aggregates" loading="lazy">
+                </div>
+            </div>
+        </section>
 
-<script>
-const menuToggle=document.getElementById('menuToggle');
-const navLinks=document.getElementById('navLinks');
-menuToggle.addEventListener('click',()=>{const open=navLinks.classList.toggle('open');menuToggle.setAttribute('aria-expanded',String(open));menuToggle.setAttribute('aria-label',open?'Close navigation menu':'Open navigation menu');menuToggle.textContent=open?'×':'☰';});
-navLinks.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{navLinks.classList.remove('open');menuToggle.setAttribute('aria-expanded','false');menuToggle.setAttribute('aria-label','Open navigation menu');menuToggle.textContent='☰';}));
-document.querySelectorAll('[data-enquiry]').forEach(link=>link.addEventListener('click',()=>{const select=document.getElementById('type');const requested=link.dataset.enquiry;const mapping={'Processing services':'Processing services','Mineral supply':'Mineral supply','Mineral supply or purchasing':'Mineral supply','Sampling and testing':'Sampling and testing','Investment or strategic partnership':'Investment enquiry'};if(mapping[requested])select.value=mapping[requested];else if(requested==='Mineral supply or purchasing')select.value='Mineral purchasing';}));
-document.getElementById('contactForm').addEventListener('submit',function(e){
- e.preventDefault();
- if(!this.reportValidity())return;
- const d=new FormData(this);
- const subject=encodeURIComponent('Lexy Website Enquiry — '+d.get('type'));
- const body=encodeURIComponent('Name: '+d.get('name')+'\nCompany: '+(d.get('company')||'Not provided')+'\nEmail: '+d.get('email')+'\nPhone: '+(d.get('phone')||'Not provided')+'\nEnquiry type: '+d.get('type')+'\n\nMessage:\n'+d.get('message'));
- const status=document.getElementById('formStatus');
- status.textContent='Opening your email application. Review the prepared message and press Send to deliver it.';
- window.location.href='mailto:lexymineraltechnologies@gmail.com?subject='+subject+'&body='+body;
-});
-</script>
+        <!-- CORE SERVICES -->
+        <section id="solutions" class="section-padding">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-tag">What We Do</span>
+                    <h2>Integrated Mineral Solutions</h2>
+                </div>
+                <div class="grid-3">
+                    <div class="card">
+                        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=80" alt="Mineral processing operation" loading="lazy">
+                        <div class="card-body">
+                            <h3>Mineral Processing</h3>
+                            <p>Processing and concentration arrangements intended to help prepare suitable mineral materials for further commercial use.</p>
+                            <a href="#contact" class="card-link">Enquire About Processing <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="https://images.unsplash.com/photo-1616401784845-180882ba9ba8?auto=format&fit=crop&w=600&q=80" alt="Mineral concentrates being sorted" loading="lazy">
+                        <div class="card-body">
+                            <h3>Mineral Aggregation & Trading</h3>
+                            <p>Mineral sourcing, purchasing, aggregation, and commercial trading based on material quality, supplier relationships, and buyer requirements.</p>
+                            <a href="#contact" class="card-link">Explore Trading <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=600&q=80" alt="Mineral sampling and testing" loading="lazy">
+                        <div class="card-body">
+                            <h3>Sampling, Testing & Verification</h3>
+                            <p>Mineral sampling and quality assessment intended to support informed purchasing, processing, and commercial decisions.</p>
+                            <a href="#contact" class="card-link">Learn About Testing <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOUNDER EXPERIENCE -->
+        <section id="about" class="section-padding bg-soft-white">
+            <div class="container grid-2">
+                <div class="image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1542332213-9b5a5a3fad35?auto=format&fit=crop&w=800&q=80" alt="Mineral field evaluation" loading="lazy">
+                </div>
+                <div>
+                    <span class="section-tag">Founder Background</span>
+                    <h2>Built on Practical Mineral Industry Experience</h2>
+                    <p>Lexy Mineral Technologies is informed by hands-on experience in mineral purchasing, processing operations, material assessment, concentration, logistics, and operational recordkeeping.</p>
+                    <p>Beginning in 2023, the founder gained practical exposure to mineral-related activities across several mineral-producing regions of Nigeria, including <strong>Plateau State, Zamfara State, Kaduna State, Maiduguri and surrounding areas, and Bauchi State</strong>. This experience included working with existing processing mills, assessing materials before purchase, participating in mineral concentration activities, and supervising the movement of mineral materials.</p>
+                    <p>These experiences helped shape an understanding of the practical challenges involved in sourcing, evaluating, processing, and bringing mineral materials to market. Lexy Mineral Technologies is being developed to build on that foundation.</p>
+                    <div style="margin-top: 2rem;">
+                        <a href="#contact" class="btn btn-primary">Connect With Our Team</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- OPERATING MODEL -->
+        <section class="section-padding">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-tag">Operating Model</span>
+                    <h2>From Mineral Sourcing to Commercial Supply</h2>
+                </div>
+                <div class="process-grid">
+                    <div class="process-step">
+                        <span class="step-num">01</span>
+                        <h3>Source</h3>
+                        <p>Identify mineral suppliers and suitable materials from trusted partners.</p>
+                    </div>
+                    <div class="process-step">
+                        <span class="step-num">02</span>
+                        <h3>Assess</h3>
+                        <p>Inspect materials and arrange appropriate sampling, testing, or grade assessment.</p>
+                    </div>
+                    <div class="process-step">
+                        <span class="step-num">03</span>
+                        <h3>Process</h3>
+                        <p>Arrange suitable processing or concentration where required and operationally available.</p>
+                    </div>
+                    <div class="process-step">
+                        <span class="step-num">04</span>
+                        <h3>Aggregate</h3>
+                        <p>Purchase and organize materials that meet our commercial and quality requirements.</p>
+                    </div>
+                    <div class="process-step">
+                        <span class="step-num">05</span>
+                        <h3>Trade</h3>
+                        <p>Supply suitable mineral products to established buyers and commercial partners.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MINERALS SECTION -->
+        <section id="minerals" class="section-padding bg-soft-white">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-tag">Our Scope</span>
+                    <h2>Minerals Within Our Commercial Focus</h2>
+                    <p>Each mineral is evaluated against strict quality benchmarks, market demand, and responsible sourcing practices.</p>
+                </div>
+                <div class="mineral-grid">
+                    <!-- 1. Iron Ore -->
+                    <div class="mineral-card">
+                        <img src="https://images.unsplash.com/photo-1618172193763-c511deb635ca?auto=format&fit=crop&w=500&q=80" alt="Iron ore specimen" loading="lazy">
+                        <div class="mineral-info">
+                            <h3>Iron Ore</h3>
+                            <p>Raw iron-bearing materials prioritized for industrial steel production and export supply chains.</p>
+                            <a href="#contact" class="btn btn-sm btn-primary-outline">Enquire</a>
+                        </div>
+                    </div>
+                    <!-- 2. Tantalite -->
+                    <div class="mineral-card">
+                        <img src="https://images.unsplash.com/photo-1605648916361-9bc12ad6a566?auto=format&fit=crop&w=500&q=80" alt="Tantalite concentrate" loading="lazy">
+                        <div class="mineral-info">
+                            <h3>Tantalite</h3>
+                            <p>High-density refractory mineral crucial for electronics and advanced manufacturing sectors.</p>
+                            <a href="#contact" class="btn btn-sm btn-primary-outline">Enquire</a>
+                        </div>
+                    </div>
+                    <!-- 3. Columbite -->
+                    <div class="mineral-card">
+                        <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=500&q=80" alt="Columbite mineral" loading="lazy">
+                        <div class="mineral-info">
+                            <h3>Columbite</h3>
+                            <p>Niobium-bearing ore sourced and handled with strict attention to grade purity and concentration.</p>
+                            <a href="#contact" class="btn btn-sm btn-primary-outline">Enquire</a>
+                        </div>
+                    </div>
+                    <!-- 4. Monazite -->
+                    <div class="mineral-card">
+                        <img src="https://images.unsplash.com/photo-1615715757404-585a73e6a48d?auto=format&fit=crop&w=500&q=80" alt="Monazite mineral" loading="lazy">
+                        <div class="mineral-info">
+                            <h3>Monazite</h3>
+                            <p>Phosphate mineral containing rare earth elements, managed under rigorous compliance frameworks.</p>
+                            <a href="#contact" class="btn btn-sm btn-primary-outline">Enquire</a>
+                        </div>
+                    </div>
+                    <!-- 5. Zircon -->
+                    <div class="mineral-card">
+                        <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=500&q=80" alt="Zircon sand and specimens" loading="lazy">
+                        <div class="mineral-info">
+                            <h3>Zircon</h3>
+                            <p>Silicate mineral prized in ceramic opacification, refractories, and foundry casting applications.</p>
+                            <a href="#contact" class="btn btn-sm btn-primary-outline">Enquire</a>
+                        </div>
+                    </div>
+                    <!-- 6. Tin-bearing -->
+                    <div class="mineral-card">
+                        <img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=500&q=80" alt="Cassiterite tin concentrate" loading="lazy">
+                        <div class="mineral-info">
+                            <h3>Tin-Bearing Materials</h3>
+                            <p>Cassiterite and tin concentrates evaluated and prepared for commercial smelting and soldering markets.</p>
+                            <a href="#contact" class="btn btn-sm btn-primary-outline">Enquire</a>
+                        </div>
+                    </div>
+                    <!-- 7. Rutile -->
+                    <div class="mineral-card">
+                        <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=500&q=80" alt="Rutile titanium ore" loading="lazy">
+                        <div class="mineral-info">
+                            <h3>Rutile</h3>
+                            <p>Titanium dioxide mineral essential for welding rod coatings and high-grade pigment production.</p>
+                            <a href="#contact" class="btn btn-sm btn-primary-outline">Enquire</a>
+                        </div>
+                    </div>
+                    <!-- 8. Silicon-bearing -->
+                    <div class="mineral-card">
+                        <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=500&q=80" alt="Silicon-bearing materials" loading="lazy">
+                        <div class="mineral-info">
+                            <h3>Silicon-Bearing Materials</h3>
+                            <p>Industrial quartz and silicon source materials for metallurgical and chemical processing.</p>
+                            <a href="#contact" class="btn btn-sm btn-primary-outline">Enquire</a>
+                        </div>
+                    </div>
+                    <!-- 9. Copper-bearing -->
+                    <div class="mineral-card">
+                        <img src="https://images.unsplash.com/photo-1558445100-333e5494d4d1?auto=format&fit=crop&w=500&q=80" alt="Copper azurite mineral" loading="lazy">
+                        <div class="mineral-info">
+                            <h3>Copper-Bearing Materials</h3>
+                            <p>Copper ores and azurite specimens assessed for grade viability and commercial aggregation.</p>
+                            <a href="#contact" class="btn btn-sm btn-primary-outline">Enquire</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- WHY LEXY? -->
+        <section class="section-padding">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-tag">Core Principles</span>
+                    <h2>Built Around the Realities of Mineral Commerce</h2>
+                </div>
+                <div class="grid-4">
+                    <div class="feature-box">
+                        <div class="icon-circle"><i class="fa-solid fa-handshake"></i></div>
+                        <h3>Direct Commercial Participation</h3>
+                        <p>Lexy aims to participate directly in mineral purchasing, aggregation, and trading.</p>
+                    </div>
+                    <div class="feature-box">
+                        <div class="icon-circle"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+                        <h3>Quality Awareness</h3>
+                        <p>Appropriate material assessment helps support informed commercial decisions.</p>
+                    </div>
+                    <div class="feature-box">
+                        <div class="icon-circle"><i class="fa-solid fa-clipboard-list"></i></div>
+                        <h3>Organized Operations</h3>
+                        <p>Improving recordkeeping, material identification, operational coordination, and documentation.</p>
+                    </div>
+                    <div class="feature-box">
+                        <div class="icon-circle"><i class="fa-solid fa-microchip"></i></div>
+                        <h3>Technology-Enabled Growth</h3>
+                        <p>Digital tools support better management of mineral records, services, and commercial info.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- DIGITAL PLATFORM PREVIEW -->
+        <section id="platform" class="section-padding bg-soft-white">
+            <div class="container grid-2">
+                <div>
+                    <span class="section-tag">Technology Vision</span>
+                    <h2>Technology for a More Organized Mineral Value Chain</h2>
+                    <p>Lexy Mineral Technologies aims to develop digital tools that help organize mineral records, quality information, processing activities, supplier information, and commercial operations.</p>
+                    <p>The long-term objective is to improve operational visibility and documentation while supporting Lexy's direct role in mineral purchasing, aggregation, and trading.</p>
+                    <ul class="check-list">
+                        <li><i class="fa-solid fa-circle-check"></i> Mineral inventory and batch tracking systems</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Digital sampling, grading, and test reports</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Processing status and supplier account management</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Transparent documentation for commercial buyers</li>
+                    </ul>
+                    <p class="note-text"><em>Note: Certain platform features are currently under active development.</em></p>
+                </div>
+                <div class="dashboard-preview">
+                    <div class="dashboard-header">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                        <span class="dash-title">Lexy Operations Portal [Demo View]</span>
+                    </div>
+                    <div class="dashboard-body">
+                        <div class="dash-card">
+                            <span>Active Mineral Batches</span>
+                            <strong>14 Tracked Lots</strong>
+                        </div>
+                        <div class="dash-card">
+                            <span>Quality Reports</span>
+                            <strong>Verified / Assessed</strong>
+                        </div>
+                        <div class="dash-card">
+                            <span>Processing Statuses</span>
+                            <strong>Mills Coordinated</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- INVESTORS & PARTNERSHIPS -->
+        <section id="investors" class="section-padding">
+            <div class="container text-center max-w-800">
+                <span class="section-tag">Partnership & Growth</span>
+                <h2>Building for Long-Term Growth</h2>
+                <p>Lexy Mineral Technologies is developing an integrated mineral business that combines practical industry experience with mineral sourcing, processing access, quality assessment, aggregation, and commercial trading.</p>
+                <p>We welcome conversations with investors, mineral suppliers, processing partners, and organizations interested in the development of mineral commerce and technology infrastructure.</p>
+                <div style="margin-top: 2rem;">
+                    <a href="#contact" class="btn btn-primary">Discuss a Partnership</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section id="contact" class="section-padding bg-soft-white">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-tag">Get in Touch</span>
+                    <h2>Let's Build Better Mineral Operations</h2>
+                    <p>Connect directly with our team for mineral supplies, commercial partnerships, or general enquiries.</p>
+                </div>
+                
+                <div class="contact-grid">
+                    <div class="contact-info-card">
+                        <h3>Official Contact Channels</h3>
+                        <p>Reach out through our verified communication lines or send a direct message using our form.</p>
+                        
+                        <div class="contact-method">
+                            <i class="fa-solid fa-envelope"></i>
+                            <div>
+                                <span>Email Address</span>
+                                <a href="mailto:lexymineraltechnologies@gmail.com">lexymineraltechnologies@gmail.com</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-method">
+                            <i class="fa-brands fa-whatsapp"></i>
+                            <div>
+                                <span>WhatsApp Direct</span>
+                                <a href="https://wa.me/2348145711445" target="_blank">+234 814 571 1445</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <label for="fullName">Full Name *</label>
+                            <input type="text" id="fullName" required placeholder="Enter your full name">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="orgName">Company or Organization (Optional)</label>
+                            <input type="text" id="orgName" placeholder="Your company name">
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" required placeholder="name@example.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number (Optional)</label>
+                                <input type="tel" id="phone" placeholder="+234 ...">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="enquiryType">Enquiry Type *</label>
+                            <select id="enquiryType" required>
+                                <option value="">Select enquiry type...</option>
+                                <option value="Mineral Supply">Mineral Supply</option>
+                                <option value="Mineral Purchasing">Mineral Purchasing</option>
+                                <option value="Processing Services">Processing Services</option>
+                                <option value="Sampling and Testing">Sampling and Testing</option>
+                                <option value="Business Partnership">Business Partnership</option>
+                                <option value="Investment Enquiry">Investment Enquiry</option>
+                                <option value="General Enquiry">General Enquiry</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" rows="4" required placeholder="Provide details about your enquiry..."></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+                        <div id="formAlert" class="form-alert" style="display:none;"></div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div>
+                <div class="footer-brand">
+                    <div class="logo-box sm">
+                        <span class="logo-letter">L</span>
+                    </div>
+                    <span>Lexy Mineral Technologies</span>
+                </div>
+                <p>Mineral sourcing, processing, quality assessment, aggregation, and technology-enabled mineral commerce.</p>
+            </div>
+            <div>
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#solutions">Solutions</a></li>
+                    <li><a href="#minerals">Minerals</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Platform & Investors</h4>
+                <ul class="footer-links">
+                    <li><a href="#platform">Digital Platform</a></li>
+                    <li><a href="#approach">Our Approach</a></li>
+                    <li><a href="#investors">Investors</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Connect</h4>
+                <p><i class="fa-solid fa-envelope"></i> lexymineraltechnologies@gmail.com</p>
+                <p><i class="fa-brands fa-whatsapp"></i> +234 814 571 1445</p>
+            </div>
+        </div>
+        <div class="footer-bottom text-center">
+            <p>&copy; 2026 Lexy Mineral Technologies. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- SCRIPT -->
+    <script>
+        // Mobile navigation toggle
+        const menuBtn = document.getElementById('menuBtn');
+        const navLinks = document.getElementById('navLinks');
+
+        if (menuBtn && navLinks) {
+            menuBtn.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                const icon = menuBtn.querySelector('i');
+                if (navLinks.classList.contains('active')) {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-xmark');
+                } else {
+                    icon.classList.remove('fa-xmark');
+                    icon.classList.add('fa-bars');
+                }
+            });
+
+            // Close mobile menu on link click
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('active');
+                    const icon = menuBtn.querySelector('i');
+                    icon.classList.remove('fa-xmark');
+                    icon.classList.add('fa-bars');
+                });
+            });
+        }
+
+        // Contact form handling with feedback simulation
+        const contactForm = document.getElementById('contactForm');
+        const formAlert = document.getElementById('formAlert');
+
+        if (contactForm) {
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                
+                // Form field data retrieval (ready for backend integration)
+                const formData = {
+                    fullName: document.getElementById('fullName').value,
+                    orgName: document.getElementById('orgName').value,
+                    email: document.getElementById('email').value,
+                    phone: document.getElementById('phone').value,
+                    enquiryType: document.getElementById('enquiryType').value,
+                    message: document.getElementById('message').value
+                };
+
+                // Simulate successful submission response
+                formAlert.style.display = 'block';
+                formAlert.className = 'form-alert success';
+                formAlert.textContent = 'Thank you. Your message has been received successfully. We will be in touch shortly.';
+                
+                contactForm.reset();
+
+                setTimeout(() => {
+                    formAlert.style.display = 'none';
+                }, 6000);
+            });
+        }
+    </script>
 </body>
 </html>
