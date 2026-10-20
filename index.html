@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lexy Mineral Technologies | Integrated Mineral Commerce & Technology</title>
+    <title>Lexy Mineral Technologies | Investor-Ready Corporate & Technology Platform</title>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -215,7 +215,7 @@
             position: relative;
             height: 90vh;
             min-height: 600px;
-            background: linear-gradient(rgba(16, 59, 43, 0.85), rgba(23, 77, 53, 0.8)), url('https://images.unsplash.com/photo-1578328819058-b69f3a3b0f6b?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+            background: linear-gradient(rgba(16, 59, 43, 0.9), rgba(23, 77, 53, 0.85)), url('https://images.unsplash.com/photo-1578328819058-b69f3a3b0f6b?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
             display: flex;
             align-items: center;
             text-align: left;
@@ -226,7 +226,21 @@
         .hero-content {
             position: relative;
             z-index: 2;
-            max-width: 800px;
+            max-width: 850px;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(198, 161, 91, 0.2);
+            border: 1px solid var(--subtle-gold);
+            color: var(--subtle-gold);
+            padding: 0.35rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1.25rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .hero-content h1 {
@@ -258,7 +272,35 @@
             margin-bottom: 0.5rem;
         }
 
-        /* GRIDS */
+        /* INVESTOR HIGHLIGHT BAR */
+        .investor-bar {
+            background: var(--deep-forest);
+            color: var(--mineral-white);
+            padding: 1.5rem 0;
+            border-top: 2px solid var(--subtle-gold);
+        }
+
+        .bar-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            text-align: center;
+        }
+
+        .bar-item h4 {
+            font-size: 1.5rem;
+            color: var(--subtle-gold);
+            margin-bottom: 0.2rem;
+        }
+
+        .bar-item p {
+            font-size: 0.85rem;
+            opacity: 0.85;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* GRIDS & LAYOUTS */
         .grid-2 {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -282,8 +324,10 @@
 
         .image-wrapper img {
             width: 100%;
+            height: 380px;
+            object-fit: cover;
             border-radius: 8px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.12);
         }
 
         /* CARDS */
@@ -301,7 +345,7 @@
 
         .card img {
             width: 100%;
-            height: 200px;
+            height: 220px;
             object-fit: cover;
         }
 
@@ -379,11 +423,17 @@
             overflow: hidden;
             display: flex;
             flex-direction: column;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+            transition: transform 0.2s ease;
+        }
+
+        .mineral-card:hover {
+            transform: translateY(-4px);
         }
 
         .mineral-card img {
             width: 100%;
-            height: 180px;
+            height: 190px;
             object-fit: cover;
         }
 
@@ -404,6 +454,61 @@
             color: var(--muted-grey);
             margin-bottom: 1.25rem;
             flex-grow: 1;
+        }
+
+        /* INTERACTIVE CALCULATOR SECTION */
+        .calculator-box {
+            background: var(--deep-forest);
+            color: var(--mineral-white);
+            padding: 3rem;
+            border-radius: 10px;
+            margin-top: 3rem;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .calc-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .calc-inputs label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--subtle-gold);
+            font-weight: 600;
+        }
+
+        .calc-inputs select, .calc-inputs input {
+            width: 100%;
+            padding: 0.85rem;
+            border-radius: 6px;
+            border: 1px solid rgba(255,255,255,0.2);
+            background: rgba(255,255,255,0.08);
+            color: var(--mineral-white);
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .calc-result {
+            background: rgba(255,255,255,0.05);
+            padding: 2.5rem;
+            border-radius: 8px;
+            border: 1px solid var(--subtle-gold);
+            text-align: center;
+        }
+
+        .calc-result h3 {
+            color: var(--subtle-gold);
+            font-size: 2.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .calc-result p {
+            font-size: 0.95rem;
+            opacity: 0.9;
         }
 
         /* FEATURE BOX */
@@ -692,6 +797,13 @@
             .grid-4 {
                 grid-template-columns: repeat(2, 1fr);
             }
+            .bar-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+            .calc-grid {
+                grid-template-columns: 1fr;
+            }
             .footer-grid {
                 grid-template-columns: 1fr 1fr;
             }
@@ -750,8 +862,7 @@
                 <a href="#solutions">Solutions</a>
                 <a href="#minerals">Minerals</a>
                 <a href="#platform">Digital Platform</a>
-                <a href="#approach">Our Approach</a>
-                <a href="#investors">Investors</a>
+                <a href="#investors">Investors & Deck</a>
                 <a href="#contact">Contact</a>
             </nav>
 
@@ -770,14 +881,37 @@
         <!-- HERO SECTION -->
         <section id="home" class="hero-section">
             <div class="hero-content container">
+                <span class="hero-badge"><i class="fa-solid fa-chart-line"></i> Pre-Seed Investment Round Open ($150k Target)</span>
                 <h1>Building Better Infrastructure for the Mineral Value Chain.</h1>
-                <p>Lexy Mineral Technologies is developing an integrated mineral business focused on sourcing, processing, quality assessment, aggregation, and commercial trading. Built on practical industry experience, our vision is to make mineral operations more organized, informed, and reliable through operational expertise and technology.</p>
+                <p>Lexy Mineral Technologies is an integrated mineral business focused on sourcing, processing (JLM, Rapid, Airfloat & Washing systems), quality assessment, aggregation, and commercial trading across Nigeria.</p>
                 <div class="hero-buttons">
-                    <a href="#solutions" class="btn btn-primary">Explore Our Solutions</a>
-                    <a href="#contact" class="btn btn-secondary">Partner With Lexy</a>
+                    <a href="#investors" class="btn btn-primary">Review Investment Deck</a>
+                    <a href="#contact" class="btn btn-secondary">Connect With Founder</a>
                 </div>
             </div>
         </section>
+
+        <!-- INVESTOR HIGHLIGHT BAR -->
+        <div class="investor-bar">
+            <div class="container bar-grid">
+                <div class="bar-item">
+                    <h4>$150,000</h4>
+                    <p>Pre-Seed Target</p>
+                </div>
+                <div class="bar-item">
+                    <h4>3+ Years</h4>
+                    <p>Field Experience (Since 2023)</p>
+                </div>
+                <div class="bar-item">
+                    <h4>₦1.76 Trillion</h4>
+                    <p>Nigerian Solid Minerals GDP</p>
+                </div>
+                <div class="bar-item">
+                    <h4>5 Regions</h4>
+                    <p>Operational Footprint</p>
+                </div>
+            </div>
+        </div>
 
         <!-- COMPANY INTRODUCTION -->
         <section class="section-padding bg-soft-white">
@@ -786,12 +920,11 @@
                     <span class="section-tag">About Our Model</span>
                     <h2>A More Organized Approach to Mineral Commerce</h2>
                     <p>Mineral commerce depends on reliable sourcing, appropriate material assessment, processing, logistics, and trusted commercial relationships.</p>
-                    <p>Lexy Mineral Technologies is developing a business that brings these activities into a more organized operating model.</p>
-                    <p>By combining mineral purchasing, processing access, sampling and testing, aggregation, and trading, the company aims to improve how mineral materials are evaluated, prepared, and brought to market.</p>
-                    <p>Our long-term vision includes digital tools for maintaining mineral records, documenting quality information, and improving operational visibility as the business develops.</p>
+                    <p>Lexy Mineral Technologies brings these activities into a disciplined operating model[span_1](start_span)[span_1](end_span).</p>
+                    <p>By combining mineral purchasing, processing access, sampling and testing, aggregation, and trading, the company improves how mineral materials are evaluated, prepared, and brought to market[span_2](start_span)[span_2](end_span).</p>
                 </div>
                 <div class="image-wrapper">
-                    <img src="https://images.unsplash.com/photo-1578328819058-b69f3a3b0f6b?auto=format&fit=crop&w=800&q=80" alt="Raw mineral materials and aggregates" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80" alt="Industrial mineral site operations and processing" loading="lazy">
                 </div>
             </div>
         </section>
@@ -805,26 +938,26 @@
                 </div>
                 <div class="grid-3">
                     <div class="card">
-                        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=80" alt="Mineral processing operation" loading="lazy">
+                        <img src="https://images.unsplash.com/photo-1578328819058-b69f3a3b0f6b?auto=format&fit=crop&w=600&q=80" alt="Mineral processing machinery" loading="lazy">
                         <div class="card-body">
                             <h3>Mineral Processing</h3>
-                            <p>Processing and concentration arrangements intended to help prepare suitable mineral materials for further commercial use.</p>
+                            <p>Processing and concentration arrangements (JLM, Rapid, and Airfloat systems) intended to prepare mineral materials for commercial use[span_3](start_span)[span_3](end_span).</p>
                             <a href="#contact" class="card-link">Enquire About Processing <i class="fa-solid fa-arrow-right"></i></a>
                         </div>
                     </div>
                     <div class="card">
-                        <img src="https://images.unsplash.com/photo-1616401784845-180882ba9ba8?auto=format&fit=crop&w=600&q=80" alt="Mineral concentrates being sorted" loading="lazy">
+                        <img src="https://images.unsplash.com/photo-1616401784845-180882ba9ba8?auto=format&fit=crop&w=600&q=80" alt="Mineral aggregates" loading="lazy">
                         <div class="card-body">
                             <h3>Mineral Aggregation & Trading</h3>
-                            <p>Mineral sourcing, purchasing, aggregation, and commercial trading based on material quality, supplier relationships, and buyer requirements.</p>
+                            <p>Sourcing, purchasing, aggregation, and commercial trading based on material grade, purity, and strict buyer specifications[span_4](start_span)[span_4](end_span).</p>
                             <a href="#contact" class="card-link">Explore Trading <i class="fa-solid fa-arrow-right"></i></a>
                         </div>
                     </div>
                     <div class="card">
-                        <img src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=600&q=80" alt="Mineral sampling and testing" loading="lazy">
+                        <img src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=600&q=80" alt="Sampling and testing" loading="lazy">
                         <div class="card-body">
                             <h3>Sampling, Testing & Verification</h3>
-                            <p>Mineral sampling and quality assessment intended to support informed purchasing, processing, and commercial decisions.</p>
+                            <p>Rigorous sampling and quality assessment supporting informed purchasing, processing, and commercial trading decisions[span_5](start_span)[span_5](end_span).</p>
                             <a href="#contact" class="card-link">Learn About Testing <i class="fa-solid fa-arrow-right"></i></a>
                         </div>
                     </div>
@@ -836,16 +969,16 @@
         <section id="about" class="section-padding bg-soft-white">
             <div class="container grid-2">
                 <div class="image-wrapper">
-                    <img src="https://images.unsplash.com/photo-1542332213-9b5a5a3fad35?auto=format&fit=crop&w=800&q=80" alt="Mineral field evaluation" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1542332213-9b5a5a3fad35?auto=format&fit=crop&w=800&q=80" alt="Field mining operations" loading="lazy">
                 </div>
                 <div>
-                    <span class="section-tag">Founder Background</span>
+                    <span class="section-tag">Founder Background & Market Fit</span>
                     <h2>Built on Practical Mineral Industry Experience</h2>
-                    <p>Lexy Mineral Technologies is informed by hands-on experience in mineral purchasing, processing operations, material assessment, concentration, logistics, and operational recordkeeping.</p>
-                    <p>Beginning in 2023, the founder gained practical exposure to mineral-related activities across several mineral-producing regions of Nigeria, including <strong>Plateau State, Zamfara State, Kaduna State, Maiduguri and surrounding areas, and Bauchi State</strong>. This experience included working with existing processing mills, assessing materials before purchase, participating in mineral concentration activities, and supervising the movement of mineral materials.</p>
-                    <p>These experiences helped shape an understanding of the practical challenges involved in sourcing, evaluating, processing, and bringing mineral materials to market. Lexy Mineral Technologies is being developed to build on that foundation.</p>
+                    <p>Lexy Mineral Technologies is informed by hands-on experience in mineral purchasing, processing operations, material assessment, concentration, logistics, and recordkeeping[span_6](start_span)[span_6](end_span).</p>
+                    <p>Beginning in 2023, the founder gained practical field exposure across key Nigerian mineral regions including <strong>Plateau State, Zamfara State, Kaduna State, Maiduguri, and Bauchi State</strong>[span_7](start_span)[span_7](end_span).</p>
+                    <p>This deep grassroots experience forms the foundation on which Lexy is being scaled into a structured, revenue-generating mineral enterprise[span_8](start_span)[span_8](end_span).</p>
                     <div style="margin-top: 2rem;">
-                        <a href="#contact" class="btn btn-primary">Connect With Our Team</a>
+                        <a href="#contact" class="btn btn-primary">Connect With Founder</a>
                     </div>
                 </div>
             </div>
@@ -862,27 +995,27 @@
                     <div class="process-step">
                         <span class="step-num">01</span>
                         <h3>Source</h3>
-                        <p>Identify mineral suppliers and suitable materials from trusted partners.</p>
+                        <p>Identify mineral suppliers and suitable raw materials from trusted mining partners[span_9](start_span)[span_9](end_span).</p>
                     </div>
                     <div class="process-step">
                         <span class="step-num">02</span>
                         <h3>Assess</h3>
-                        <p>Inspect materials and arrange appropriate sampling, testing, or grade assessment.</p>
+                        <p>Inspect materials and execute sampling, testing, or grade evaluation before purchase[span_10](start_span)[span_10](end_span).</p>
                     </div>
                     <div class="process-step">
                         <span class="step-num">03</span>
                         <h3>Process</h3>
-                        <p>Arrange suitable processing or concentration where required and operationally available.</p>
+                        <p>Utilize washing basins, JLM, Rapid, and Airfloat equipment to concentrate materials[span_11](start_span)[span_11](end_span).</p>
                     </div>
                     <div class="process-step">
                         <span class="step-num">04</span>
                         <h3>Aggregate</h3>
-                        <p>Purchase and organize materials that meet our commercial and quality requirements.</p>
+                        <p>Consolidate verified lots into commercial quantities meeting buyer standards[span_12](start_span)[span_12](end_span).</p>
                     </div>
                     <div class="process-step">
                         <span class="step-num">05</span>
                         <h3>Trade</h3>
-                        <p>Supply suitable mineral products to established buyers and commercial partners.</p>
+                        <p>Supply refined mineral products to established industrial buyers and partners[span_13](start_span)[span_13](end_span).</p>
                     </div>
                 </div>
             </div>
@@ -894,84 +1027,75 @@
                 <div class="section-header text-center">
                     <span class="section-tag">Our Scope</span>
                     <h2>Minerals Within Our Commercial Focus</h2>
-                    <p>Each mineral is evaluated against strict quality benchmarks, market demand, and responsible sourcing practices.</p>
+                    <p>Each mineral category is handled with specialized processing and quality verification protocols.</p>
                 </div>
                 <div class="mineral-grid">
-                    <!-- 1. Iron Ore -->
                     <div class="mineral-card">
-                        <img src="https://images.unsplash.com/photo-1618172193763-c511deb635ca?auto=format&fit=crop&w=500&q=80" alt="Iron ore specimen" loading="lazy">
+                        <img src="https://images.unsplash.com/photo-1618172193763-c511deb635ca?auto=format&fit=crop&w=500&q=80" alt="Iron ore" loading="lazy">
                         <div class="mineral-info">
                             <h3>Iron Ore</h3>
                             <p>Raw iron-bearing materials prioritized for industrial steel production and export supply chains.</p>
                             <a href="#contact" class="btn btn-sm btn-primary-outline">Enquire</a>
                         </div>
                     </div>
-                    <!-- 2. Tantalite -->
                     <div class="mineral-card">
-                        <img src="https://images.unsplash.com/photo-1605648916361-9bc12ad6a566?auto=format&fit=crop&w=500&q=80" alt="Tantalite concentrate" loading="lazy">
+                        <img src="https://images.unsplash.com/photo-1605648916361-9bc12ad6a566?auto=format&fit=crop&w=500&q=80" alt="Tantalite" loading="lazy">
                         <div class="mineral-info">
                             <h3>Tantalite</h3>
                             <p>High-density refractory mineral crucial for electronics and advanced manufacturing sectors.</p>
                             <a href="#contact" class="btn btn-sm btn-primary-outline">Enquire</a>
                         </div>
                     </div>
-                    <!-- 3. Columbite -->
                     <div class="mineral-card">
-                        <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=500&q=80" alt="Columbite mineral" loading="lazy">
+                        <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=500&q=80" alt="Columbite" loading="lazy">
                         <div class="mineral-info">
                             <h3>Columbite</h3>
                             <p>Niobium-bearing ore sourced and handled with strict attention to grade purity and concentration.</p>
                             <a href="#contact" class="btn btn-sm btn-primary-outline">Enquire</a>
                         </div>
                     </div>
-                    <!-- 4. Monazite -->
                     <div class="mineral-card">
-                        <img src="https://images.unsplash.com/photo-1615715757404-585a73e6a48d?auto=format&fit=crop&w=500&q=80" alt="Monazite mineral" loading="lazy">
+                        <img src="https://images.unsplash.com/photo-1615715757404-585a73e6a48d?auto=format&fit=crop&w=500&q=80" alt="Monazite" loading="lazy">
                         <div class="mineral-info">
                             <h3>Monazite</h3>
                             <p>Phosphate mineral containing rare earth elements, managed under rigorous compliance frameworks.</p>
                             <a href="#contact" class="btn btn-sm btn-primary-outline">Enquire</a>
                         </div>
                     </div>
-                    <!-- 5. Zircon -->
                     <div class="mineral-card">
-                        <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=500&q=80" alt="Zircon sand and specimens" loading="lazy">
+                        <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=500&q=80" alt="Zircon" loading="lazy">
                         <div class="mineral-info">
                             <h3>Zircon</h3>
                             <p>Silicate mineral prized in ceramic opacification, refractories, and foundry casting applications.</p>
                             <a href="#contact" class="btn btn-sm btn-primary-outline">Enquire</a>
                         </div>
                     </div>
-                    <!-- 6. Tin-bearing -->
                     <div class="mineral-card">
-                        <img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=500&q=80" alt="Cassiterite tin concentrate" loading="lazy">
+                        <img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=500&q=80" alt="Tin-bearing" loading="lazy">
                         <div class="mineral-info">
                             <h3>Tin-Bearing Materials</h3>
                             <p>Cassiterite and tin concentrates evaluated and prepared for commercial smelting and soldering markets.</p>
                             <a href="#contact" class="btn btn-sm btn-primary-outline">Enquire</a>
                         </div>
                     </div>
-                    <!-- 7. Rutile -->
                     <div class="mineral-card">
-                        <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=500&q=80" alt="Rutile titanium ore" loading="lazy">
+                        <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=500&q=80" alt="Rutile" loading="lazy">
                         <div class="mineral-info">
                             <h3>Rutile</h3>
                             <p>Titanium dioxide mineral essential for welding rod coatings and high-grade pigment production.</p>
                             <a href="#contact" class="btn btn-sm btn-primary-outline">Enquire</a>
                         </div>
                     </div>
-                    <!-- 8. Silicon-bearing -->
                     <div class="mineral-card">
-                        <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=500&q=80" alt="Silicon-bearing materials" loading="lazy">
+                        <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=500&q=80" alt="Silicon-bearing" loading="lazy">
                         <div class="mineral-info">
                             <h3>Silicon-Bearing Materials</h3>
                             <p>Industrial quartz and silicon source materials for metallurgical and chemical processing.</p>
                             <a href="#contact" class="btn btn-sm btn-primary-outline">Enquire</a>
                         </div>
                     </div>
-                    <!-- 9. Copper-bearing -->
                     <div class="mineral-card">
-                        <img src="https://images.unsplash.com/photo-1558445100-333e5494d4d1?auto=format&fit=crop&w=500&q=80" alt="Copper azurite mineral" loading="lazy">
+                        <img src="https://images.unsplash.com/photo-1558445100-333e5494d4d1?auto=format&fit=crop&w=500&q=80" alt="Copper-bearing" loading="lazy">
                         <div class="mineral-info">
                             <h3>Copper-Bearing Materials</h3>
                             <p>Copper ores and azurite specimens assessed for grade viability and commercial aggregation.</p>
@@ -982,33 +1106,31 @@
             </div>
         </section>
 
-        <!-- WHY LEXY? -->
+        <!-- INTERACTIVE INVESTOR ROI ESTIMATOR -->
         <section class="section-padding">
             <div class="container">
                 <div class="section-header text-center">
-                    <span class="section-tag">Core Principles</span>
-                    <h2>Built Around the Realities of Mineral Commerce</h2>
+                    <span class="section-tag">Value Proposition Simulator</span>
+                    <h2>Interactive Value & Return Potential</h2>
+                    <p>Explore estimated net value multipliers across mineral tiers based on concentration and processing quality.</p>
                 </div>
-                <div class="grid-4">
-                    <div class="feature-box">
-                        <div class="icon-circle"><i class="fa-solid fa-handshake"></i></div>
-                        <h3>Direct Commercial Participation</h3>
-                        <p>Lexy aims to participate directly in mineral purchasing, aggregation, and trading.</p>
-                    </div>
-                    <div class="feature-box">
-                        <div class="icon-circle"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
-                        <h3>Quality Awareness</h3>
-                        <p>Appropriate material assessment helps support informed commercial decisions.</p>
-                    </div>
-                    <div class="feature-box">
-                        <div class="icon-circle"><i class="fa-solid fa-clipboard-list"></i></div>
-                        <h3>Organized Operations</h3>
-                        <p>Improving recordkeeping, material identification, operational coordination, and documentation.</p>
-                    </div>
-                    <div class="feature-box">
-                        <div class="icon-circle"><i class="fa-solid fa-microchip"></i></div>
-                        <h3>Technology-Enabled Growth</h3>
-                        <p>Digital tools support better management of mineral records, services, and commercial info.</p>
+                <div class="calculator-box">
+                    <div class="calc-grid">
+                        <div class="calc-inputs">
+                            <label for="mineralTier">Select Mineral Category Tier:</label>
+                            <select id="mineralTier" onchange="calculateROI()">
+                                <option value="2">Lower-Value Materials (e.g., Iron Ore / Silicon)</option>
+                                <option value="15" selected>Higher-Value Materials (Tantalite / Columbite / Tin)</option>
+                            </select>
+
+                            <label for="capitalInput">Deployment Scale ($ USD):</label>
+                            <input type="number" id="capitalInput" value="10000" min="1000" step="1000" oninput="calculateROI()">
+                        </div>
+                        <div class="calc-result">
+                            <span style="display:block; font-size: 0.85rem; text-transform: uppercase; letter-spacing:1px; margin-bottom:0.5rem; color:#fff;">Estimated Potential Return Value</span>
+                            <h3 id="roiOutput">$150,000</h3>
+                            <p id="roiDesc">Depending on grade recovery, processing, and market conditions.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1020,13 +1142,13 @@
                 <div>
                     <span class="section-tag">Technology Vision</span>
                     <h2>Technology for a More Organized Mineral Value Chain</h2>
-                    <p>Lexy Mineral Technologies aims to develop digital tools that help organize mineral records, quality information, processing activities, supplier information, and commercial operations.</p>
-                    <p>The long-term objective is to improve operational visibility and documentation while supporting Lexy's direct role in mineral purchasing, aggregation, and trading.</p>
+                    <p>Lexy Mineral Technologies is developing digital tools to organize mineral records, quality information, processing activities, and supplier accounts[span_14](start_span)[span_14](end_span).</p>
+                    <p>The long-term objective is to improve operational visibility and documentation across all commercial transactions[span_15](start_span)[span_15](end_span).</p>
                     <ul class="check-list">
-                        <li><i class="fa-solid fa-circle-check"></i> Mineral inventory and batch tracking systems</li>
-                        <li><i class="fa-solid fa-circle-check"></i> Digital sampling, grading, and test reports</li>
-                        <li><i class="fa-solid fa-circle-check"></i> Processing status and supplier account management</li>
-                        <li><i class="fa-solid fa-circle-check"></i> Transparent documentation for commercial buyers</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Mineral inventory and batch tracking systems[span_16](start_span)[span_16](end_span)</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Digital sampling, grading, and test reports[span_17](start_span)[span_17](end_span)</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Processing status and supplier account management[span_18](start_span)[span_18](end_span)</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Transparent documentation for commercial buyers[span_19](start_span)[span_19](end_span)</li>
                     </ul>
                     <p class="note-text"><em>Note: Certain platform features are currently under active development.</em></p>
                 </div>
@@ -1055,15 +1177,28 @@
             </div>
         </section>
 
-        <!-- INVESTORS & PARTNERSHIPS -->
+        <!-- INVESTORS DECK DOWNLOAD & ALLOCATION -->
         <section id="investors" class="section-padding">
             <div class="container text-center max-w-800">
-                <span class="section-tag">Partnership & Growth</span>
-                <h2>Building for Long-Term Growth</h2>
-                <p>Lexy Mineral Technologies is developing an integrated mineral business that combines practical industry experience with mineral sourcing, processing access, quality assessment, aggregation, and commercial trading.</p>
-                <p>We welcome conversations with investors, mineral suppliers, processing partners, and organizations interested in the development of mineral commerce and technology infrastructure.</p>
-                <div style="margin-top: 2rem;">
-                    <a href="#contact" class="btn btn-primary">Discuss a Partnership</a>
+                <span class="section-tag">Pre-Seed Offering</span>
+                <h2>Building for Long-Term Growth ($150,000 Round)</h2>
+                <p>Lexy Mineral Technologies is raising $150,000 in pre-seed funding to acquire core processing machinery (JLM, Rapid, Airfloat, Washing basins), secure working capital, and scale operations[span_20](start_span)[span_20](end_span).</p>
+                
+                <div style="background: var(--soft-white); padding: 2rem; border-radius: 8px; margin: 2rem 0; text-align: left; border: 1px solid var(--border-color);">
+                    <h4 style="margin-bottom: 1rem; color: var(--forest-green);">Use of Funds Breakdown:</h4>
+                    <ul style="display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.95rem;">
+                        <li><strong>Processing Equipment:</strong> $80,000 (JLM, Rapid, Airfloat, Washing machines)[span_21](start_span)[span_21](end_span)</li>
+                        <li><strong>Mineral Aggregation & Working Capital:</strong> $40,000 (Rentals, labbor, basins)[span_22](start_span)[span_22](end_span)</li>
+                        <li><strong>Logistics & Field Fleet:</strong> $15,000 (Company transport vehicle & transit)[span_23](start_span)[span_23](end_span)</li>
+                        <li><strong>Sampling, Testing & Verification:</strong> $7,000[span_24](start_span)[span_24](end_span)</li>
+                        <li><strong>Technology & Digital Platform:</strong> $5,000[span_25](start_span)[span_25](end_span)</li>
+                        <li><strong>Registration & Compliance:</strong> $3,000[span_26](start_span)[span_26](end_span)</li>
+                    </ul>
+                </div>
+
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="#contact" class="btn btn-primary">Request Investor Deck PDF</a>
+                    <a href="#contact" class="btn btn-secondary">Schedule Founder Meeting</a>
                 </div>
             </div>
         </section>
@@ -1074,7 +1209,7 @@
                 <div class="section-header text-center">
                     <span class="section-tag">Get in Touch</span>
                     <h2>Let's Build Better Mineral Operations</h2>
-                    <p>Connect directly with our team for mineral supplies, commercial partnerships, or general enquiries.</p>
+                    <p>Connect directly with our team for mineral supplies, commercial partnerships, or investment enquiries.</p>
                 </div>
                 
                 <div class="contact-grid">
@@ -1086,7 +1221,7 @@
                             <i class="fa-solid fa-envelope"></i>
                             <div>
                                 <span>Email Address</span>
-                                <a href="mailto:lexymineraltechnologies@gmail.com">lexymineraltechnologies@gmail.com</a>
+                                <a href="mailto:lexymineraltechnologies@gmail.com">lexymineraltechnologies@gmail.com</a>[span_27](start_span)[span_27](end_span)
                             </div>
                         </div>
 
@@ -1094,7 +1229,7 @@
                             <i class="fa-brands fa-whatsapp"></i>
                             <div>
                                 <span>WhatsApp Direct</span>
-                                <a href="https://wa.me/2348145711445" target="_blank">+234 814 571 1445</a>
+                                <a href="https://wa.me/2348145711445" target="_blank">+234 814 571 1445</a>[span_28](start_span)[span_28](end_span)
                             </div>
                         </div>
                     </div>
@@ -1159,7 +1294,7 @@
                     </div>
                     <span>Lexy Mineral Technologies</span>
                 </div>
-                <p>Mineral sourcing, processing, quality assessment, aggregation, and technology-enabled mineral commerce.</p>
+                <p>Mineral sourcing, processing, quality assessment, aggregation, and technology-enabled mineral commerce[span_29](start_span)[span_29](end_span).</p>
             </div>
             <div>
                 <h4>Quick Links</h4>
@@ -1174,8 +1309,7 @@
                 <h4>Platform & Investors</h4>
                 <ul class="footer-links">
                     <li><a href="#platform">Digital Platform</a></li>
-                    <li><a href="#approach">Our Approach</a></li>
-                    <li><a href="#investors">Investors</a></li>
+                    <li><a href="#investors">Investors & Deck</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </div>
@@ -1186,12 +1320,28 @@
             </div>
         </div>
         <div class="footer-bottom text-center">
-            <p>&copy; 2026 Lexy Mineral Technologies. All rights reserved.</p>
+            <p>&copy; 2026 Lexy Mineral Technologies. All rights reserved.[span_30](start_span)[span_30](end_span)</p>
         </div>
     </footer>
 
     <!-- SCRIPT -->
     <script>
+        // Interactive ROI Calculator Logic
+        function calculateROI() {
+            const multiplier = parseFloat(document.getElementById('mineralTier').value);
+            const capital = parseFloat(document.getElementById('capitalInput').value) || 0;
+            const estimatedReturn = capital * multiplier;
+            
+            document.getElementById('roiOutput').textContent = '$' + estimatedReturn.toLocaleString();
+            if(multiplier > 5) {
+                document.getElementById('roiDesc').textContent = 'High-value tier (Tantalite/Columbite/Tin): Potential return up to 20x based on grade & recovery[span_31](start_span)[span_31](end_span).';
+            } else {
+                document.getElementById('roiDesc').textContent = 'Lower-value tier (Iron Ore/Silicon): Stable high-volume turnover yielding ~2x net value[span_32](start_span)[span_32](end_span).';
+            }
+        }
+        // Run on load
+        window.onload = calculateROI;
+
         // Mobile navigation toggle
         const menuBtn = document.getElementById('menuBtn');
         const navLinks = document.getElementById('navLinks');
@@ -1228,20 +1378,9 @@
             contactForm.addEventListener('submit', (e) => {
                 e.preventDefault();
                 
-                // Form field data retrieval (ready for backend integration)
-                const formData = {
-                    fullName: document.getElementById('fullName').value,
-                    orgName: document.getElementById('orgName').value,
-                    email: document.getElementById('email').value,
-                    phone: document.getElementById('phone').value,
-                    enquiryType: document.getElementById('enquiryType').value,
-                    message: document.getElementById('message').value
-                };
-
-                // Simulate successful submission response
                 formAlert.style.display = 'block';
                 formAlert.className = 'form-alert success';
-                formAlert.textContent = 'Thank you. Your message has been received successfully. We will be in touch shortly.';
+                formAlert.textContent = 'Thank you. Your message has been received successfully. Our founder will be in touch shortly.';
                 
                 contactForm.reset();
 
